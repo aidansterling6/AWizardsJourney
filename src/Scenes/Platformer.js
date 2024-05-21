@@ -470,15 +470,15 @@ class Platformer extends Phaser.Scene {
 
     preload() {
       this.load.setPath("./assets/");
-      this.load.image("metal", "Tiles/metalCenter.png");
-      this.load.image("pipe1", "Tiles/pipeGreen_25.png");
-      this.load.image("pipe2", "Tiles/pipeGreen_26.png");
-      this.load.image("pipe3", "Tiles/pipeGreen_36.png");
-      this.load.image("pipe4", "Tiles/pipeGreen_24.png");
-      this.load.image("tileGrey", "Tiles/tileGrey_01.png");
-      this.load.image("tileGrey2", "Tiles/tile_0022.png");
-      this.load.image("background", "Tiles/Marble/tile_0070.png");
-      this.load.image("gem", "Tiles/platformPack_item001.png");
+      this.load.image("metal", "tiles/metalCenter.png");
+      this.load.image("pipe1", "tiles/pipeGreen_25.png");
+      this.load.image("pipe2", "tiles/pipeGreen_26.png");
+      this.load.image("pipe3", "tiles/pipeGreen_36.png");
+      this.load.image("pipe4", "tiles/pipeGreen_24.png");
+      this.load.image("tileGrey", "tiles/tileGrey_01.png");
+      this.load.image("tileGrey2", "tiles/tile_0022.png");
+      this.load.image("background", "tiles/Marble/tile_0070.png");
+      this.load.image("gem", "tiles/platformPack_item001.png");
       //platformPack_item001.png
 
       this.load.audio('jump', [ 'sounds/impactSoft_heavy_001.ogg' ]);
