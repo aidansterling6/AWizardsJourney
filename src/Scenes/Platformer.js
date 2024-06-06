@@ -4,7 +4,7 @@ class Platformer extends Phaser.Scene {
   }
 
   init() {
-    this.SCALE = 2;
+    this.SCALE = 1.5;
     this.PARTICLE_VELOCITY = 50;
     this.width = config.width;
     this.height = config.height;
@@ -62,6 +62,8 @@ class Platformer extends Phaser.Scene {
     this.lazer = [];
     //an array holding all this.mirrors
     this.mirror = [];
+    //mapImage
+    this.mapImage = null;
 
     //load a level with its number, bReset resets extra thinga for first load
     this.loadLevel = function (num, bReset) {
@@ -83,6 +85,12 @@ class Platformer extends Phaser.Scene {
         if (this.gems[i].sprite) {
           this.gems[i].sprite.destroy(true);
         }
+      }
+      if(num === 1){
+        this.mapImage = this.add.sprite(this.width, this.height, "map1");
+        this.mapImage.x = 0;
+        this.mapImage.y = 0;
+        this.mapImage.depth = -10000;
       }
 
       //setup level based on data
@@ -192,6 +200,7 @@ class Platformer extends Phaser.Scene {
   preload() {
     //load asset files
     this.load.setPath("./assets/");
+    this.load.image("map1", "map1.png");
     this.load.image("metal", "tiles/metalCenter.png");
     this.load.image("pipe1", "tiles/pipeGreen_25.png");
     this.load.image("pipe2", "tiles/pipeGreen_26.png");
@@ -1557,6 +1566,9 @@ class Platformer extends Phaser.Scene {
     this.paralax.displayHeight = this.height;
     this.paralax.x = this.player.x;
     this.paralax.y = this.player.y;
+
+
+    this.paralax.visible = false;
 
     //load level for first time
     if (this.start) {

@@ -1,3 +1,5 @@
+let sw1 = 32*0.8;
+let sh1 = 32*0.4
 class Level{
     constructor(
         respawnX,
@@ -16,9 +18,30 @@ class Level{
         this.rects = rects;
         this.mirror = mirror;
     }
-
     static Levels = 
         [
+            {
+                respawnX: -450,
+                respawnY: -400,
+                noMagic: [],
+                checkPoint: [],
+                gems: [],
+                rects: [
+                    {level: 1, x:0,y:0,w:10,h:20,ax:0,ay:0,HitDown:false,type:"player",n1:-1,n2:0,mi:false},
+
+
+
+                    {level: 1, x:-32*16,y:-32*7.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*19,y:-32*14.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*14,y:-32*16.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*10,y:-32*16.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*12,y:-32*18.5,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*23,y:-32*10.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*25,y:-32*13.5,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*27,y:-32*10.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                ],
+                mirror: []
+            },
             {
                 respawnX: 100,
                 respawnY: 231,
