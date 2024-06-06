@@ -21,8 +21,10 @@ class Level{
     static Levels = 
         [
             {
-                respawnX: -450,
-                respawnY: -400,
+                // respawnX: -450,
+                // respawnY: -400,
+                respawnX: 450,
+                respawnY: 0,
                 noMagic: [],
                 checkPoint: [],
                 gems: [],
@@ -37,8 +39,42 @@ class Level{
                     {level: 1, x:-32*10,y:-32*16.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*12,y:-32*18.5,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*23,y:-32*10.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*8,y:-32*14.5,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*6,y:-32*8.5,w:32*2,h:32*14,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*25,y:-32*13.5,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*27,y:-32*10.5,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*8,y:-32*1.5,w:32*6,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*14.5,y:-32*0.5,w:32*9,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*23,y:-32*1.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*30.5,y:-32*7.5,w:32*7,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*33,y:-32*0,w:32*2,h:32*17,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*27,y:32*7.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*6,y:32*6.5,w:32*34,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:32*10,y:32*3,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*7,y:32*1,w:32*2,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*11,y:32*1,w:32*2,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*5,y:-32*1,w:32*2,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*2.5,y:-32*3.5,w:32*5,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*2.5,y:-32*6.5,w:32*5,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*1,y:-32*5.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:32*7.5,y:-32*5,w:32*5,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*14,y:-32*5,w:32*4,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*19,y:-32*5,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*14,y:-32*7.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*30,y:-32*6,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:32*34,y:-32*6,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*31,y:-32*8.5,w:32*26,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: 1, x:32*18,y:32*1.5,w:32*16,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*34,y:32*0.5,w:32*20,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:32*43,y:-32*4,w:32*2,h:32*7,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                 ],
                 mirror: []
             },

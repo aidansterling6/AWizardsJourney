@@ -4,7 +4,8 @@ class Platformer extends Phaser.Scene {
   }
 
   init() {
-    this.SCALE = 1.5;
+    //this.SCALE = 1.5;
+    this.SCALE = 0.5;
     this.PARTICLE_VELOCITY = 50;
     this.width = config.width;
     this.height = config.height;
@@ -1578,7 +1579,7 @@ class Platformer extends Phaser.Scene {
 
     //clear simple shapes
     this.graphics.clear();
-    this.background(0, 0, 0, 100);
+    //this.background(0, 0, 0, 100);
 
     //logic for antimagic fields
     this.noMagicZone(true);
