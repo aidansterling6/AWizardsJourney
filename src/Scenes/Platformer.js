@@ -4,8 +4,8 @@ class Platformer extends Phaser.Scene {
   }
 
   init() {
-    //this.SCALE = 1.5;
-    this.SCALE = 0.5;
+    this.SCALE = 1.5;
+    //this.SCALE = 0.5;
     this.PARTICLE_VELOCITY = 50;
     this.width = config.width;
     this.height = config.height;
@@ -41,7 +41,8 @@ class Platformer extends Phaser.Scene {
     //index of currently dragged block
     this.dragIndex = -1;
     //the acceleration of this.gravity
-    this.gravity = 0.1;
+    //this.gravity = 0.1;
+    this.gravity = 0.05;
     //a value that determines how fast you drag blocks
     this.dragInterpSpeed = 5;
     //the max speed that you can drag blocks at
@@ -603,7 +604,7 @@ class Platformer extends Phaser.Scene {
           this.rects[i].HitDown = false;
           // //ditect a hit
           for (var o = 0; o < this.rects.length; o++) {
-            if (i !== o && this.rects[i].y - (this.rects[i].h / 2) === this.rects[o].y + (this.rects[o].h / 2) && this.rects[i].x + (this.rects[i].w / 2) - 1 > this.rects[o].x - (this.rects[o].w / 2) && this.rects[i].x - (this.rects[i].w / 2) + 1 < this.rects[o].x + (this.rects[o].w / 2)) {
+            if (i !== o && Math.abs((this.rects[i].y - ((this.rects[i].h) / 2)) - (this.rects[o].y + (this.rects[o].h / 2))) < 0.001 && this.rects[i].x + (this.rects[i].w / 2) - 1 > this.rects[o].x - (this.rects[o].w / 2) && this.rects[i].x - (this.rects[i].w / 2) + 1 < this.rects[o].x + (this.rects[o].w / 2)) {
               this.rects[i].HitDown = true;
             }
           }
@@ -612,7 +613,7 @@ class Platformer extends Phaser.Scene {
           }
           //check that all other buttons are pressed
           for (var o = 0; o < this.rects.length; o++) {
-            if (this.rects[i].type === "button" && this.rects[i].n1 === this.rects[o].n1 && this.rects[o].HitDown === false) {
+            if (i !== o && this.rects[i].type === "button" && this.rects[i].n1 === this.rects[o].n1 && this.rects[o].HitDown === false) {
               out = false;
             }
           }
@@ -1609,24 +1610,46 @@ class Platformer extends Phaser.Scene {
 
     //handle checkpoints
     for (var i = 0; i < this.checkPoint.length; i++) {
+      //{x:200, y:200, top:0, bottom:200}
       for (var o = 0; o < this.rects.length; o++) {
-        if (this.rects[o].type === "player" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
-          this.respawnX = this.checkPoint[i];
-          this.respawnY = this.rects[o].y;
+        if (this.rects[o].type === "player" && this.rects[o].x > this.checkPoint[i].x - 5 && this.rects[o].x < this.checkPoint[i].x + 5 && this.rects[o].y + this.rects[o].h/2 > this.checkPoint[i].bottom && this.rects[o].y - this.rects[o].h/2 < this.checkPoint[i].top) {
+          this.respawnX = this.checkPoint[i].x;
+          this.respawnY = this.checkPoint[i].y;
+          console.log("checkPoint: " + this.respawnX + ", " + this.respawnY);
           if (i === this.checkPoint.length - 1) {
             this.CurrentLevel++;
             this.loadLevel(this.CurrentLevel, true);
           }
         }
-        if (this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
+        if (!this.checkPoint[i].end && this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "button" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i].x - 5 && this.rects[o].x < this.checkPoint[i].x + 5 && this.rects[o].y + this.rects[o].h/2 > this.checkPoint[i].bottom && this.rects[o].y - this.rects[o].h/2 < this.checkPoint[i].top) {
           this.dead = true;
         }
       }
+      if(!this.checkPoint[i].end){
       this.stroke(255, 0, 0, 150);
       this.strokeWeight(10);
-      this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
-      this.line(this.checkPoint[i] - this.GlobalXOffset, this.player.y - this.height / 2, this.checkPoint[i] - this.GlobalXOffset, this.player.y + this.height / 2);
+      //this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
+      this.line(this.checkPoint[i].x - this.GlobalXOffset, this.checkPoint[i].top, this.checkPoint[i].x - this.GlobalXOffset, this.checkPoint[i].bottom);
       this.strokeWeight(1);
+      }
+      // for (var o = 0; o < this.rects.length; o++) {
+      //   if (this.rects[o].type === "player" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
+      //     this.respawnX = this.checkPoint[i];
+      //     this.respawnY = this.rects[o].y;
+      //     if (i === this.checkPoint.length - 1) {
+      //       this.CurrentLevel++;
+      //       this.loadLevel(this.CurrentLevel, true);
+      //     }
+      //   }
+      //   if (this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
+      //     this.dead = true;
+      //   }
+      // }
+      // this.stroke(255, 0, 0, 150);
+      // this.strokeWeight(10);
+      // this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
+      // this.line(this.checkPoint[i] - this.GlobalXOffset, this.player.y - this.height / 2, this.checkPoint[i] - this.GlobalXOffset, this.player.y + this.height / 2);
+      // this.strokeWeight(1);
     }
     //handle resetting level
     if (this.dead || this.RKey.isDown) {
@@ -1642,6 +1665,10 @@ class Platformer extends Phaser.Scene {
       } else {
         this.helpTxt.visible = true;
       }
+    }
+    if(this.mouseIsPressed){
+      console.log("mouse: " + this.mouseX + ", " + this.mouseY);
+      console.log("{x:" + Math.round(this.mouseX*100)/100 + ", y:" + Math.round(this.mouseY*100)/100 + ", w:10, h:10},");
     }
     //handle menus
     this.btime--;

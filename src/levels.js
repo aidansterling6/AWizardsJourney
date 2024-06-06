@@ -21,15 +21,27 @@ class Level{
     static Levels = 
         [
             {
-                // respawnX: -450,
-                // respawnY: -400,
-                respawnX: 450,
-                respawnY: 0,
-                noMagic: [],
-                checkPoint: [],
-                gems: [],
+                respawnX: -550,
+                respawnY: -285,
+                noMagic: [{x:700,y:-150,w:150,h:180}],
+                checkPoint: [{x:-890, y:-90, bottom:-220, top:-80, end: false}, {x:450, y:20, bottom:-80, top:40, end: false}, {x:1250, y:0, bottom:-250, top:40, end: true}],
+                gems: [
+                    {x:-246.7, y:-103.3, w:10, h:10},
+                    {x:-450, y:-137.74, w:10, h:10},
+                    {x:-497.21, y:86.86, w:10, h:10},
+                    {x:60, y:-120, w:10, h:10},
+                    {x:80, y:-120, w:10, h:10},
+                    {x:100, y:-120, w:10, h:10},
+                ],
                 rects: [
                     {level: 1, x:0,y:0,w:10,h:20,ax:0,ay:0,HitDown:false,type:"player",n1:-1,n2:0,mi:false},
+
+                    {level: 1, x:-32*12,y:-32*10.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//1
+                    {level: 1, x:-32*25,y:-32*6,w:32*2,h:32*7,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//2
+                    {level: 1, x:-32*9,y:32*6,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//3
+                    {level: 1, x:32*11,y:32*0,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//4
+                    {level: 1, x:32*17,y:32*0,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//5
+                    {level: 1, x:32*32,y:32*0,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//6
 
 
 
@@ -55,26 +67,41 @@ class Level{
                     {level: 1, x:-32*11,y:32*1,w:32*2,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*5,y:-32*1,w:32*2,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*2.5,y:-32*3.5,w:32*5,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*2.5,y:-32*6.5,w:32*5,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*1,y:-32*5.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:32*7.5,y:-32*5,w:32*5,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*14,y:-32*5,w:32*4,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*19,y:-32*5,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*14,y:-32*7.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*30,y:-32*6,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:32*34,y:-32*6,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*31,y:-32*8.5,w:32*26,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: 1, x:32*18,y:32*1.5,w:32*16,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*34,y:32*0.5,w:32*20,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
-
                     {level: 1, x:32*43,y:-32*4,w:32*2,h:32*7,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+
+
+                    {level: 1, x:-32*16,y:-32*8.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
+                    {level: 1, x:-32*14,y:-32*1.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:2,n2:0,mi:false},
+                    {level: 1, x:-32*15.5,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:3,n2:0,mi:false},
+                    {level: 1, x:-32*2,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
+                    {level: 1, x:32*5,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
+                    {level: 1, x:32*14.05,y:32*0.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:5,n2:0,mi:false},
+                    {level: 1, x:32*25,y:-32*0.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:6,n2:0,mi:false},
+
+
+                    {level: 1, x:32*7.5,y:32*3,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
+                    {level: 1, x:32*4.5,y:32*0.5,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
+                    {level: 1, x:32*1.5,y:-32*2,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
+
+
+
+
+                    {level: 1, x:-32*10,y:-32*3,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*27.2,y:32*7,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
+                    {level: 1, x:-32*5,y:32*6,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
+                    {level: 1, x:32*17,y:32*0,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
                 ],
                 mirror: []
             },
