@@ -44,6 +44,16 @@ class Level{
                     {level: 1, x:32*32,y:32*0,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//6
 
 
+                    {level: 1, x:-32*14,y:-32*8.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},//7
+                    {level: 1, x:-32*14,y:-32*1.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:2,n2:0,mi:false},//8
+                    {level: 1, x:-32*15.5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:3,n2:0,mi:false},//9
+                    {level: 1, x:-32*2,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},//10
+                    {level: 1, x:32*5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},//11
+                    {level: 1, x:32*14.05,y:32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:5,n2:0,mi:false},//12
+                    {level: 1, x:32*25,y:-32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:6,n2:0,mi:false},//13
+
+
+
 
                     {level: -1, x:-32*16,y:-32*7.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: -1, x:-32*19,y:-32*14.5,w:32*12,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
@@ -82,15 +92,6 @@ class Level{
 
 
 
-                    {level: 1, x:-32*14,y:-32*8.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
-                    {level: 1, x:-32*14,y:-32*1.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:2,n2:0,mi:false},
-                    {level: 1, x:-32*15.5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:3,n2:0,mi:false},
-                    {level: 1, x:-32*2,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
-                    {level: 1, x:32*5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
-                    {level: 1, x:32*14.05,y:32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:5,n2:0,mi:false},
-                    {level: 1, x:32*25,y:-32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:6,n2:0,mi:false},
-
-
                     {level: 1, x:32*7.5,y:32*3,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
                     {level: 1, x:32*4.5,y:32*0.5,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
                     {level: 1, x:32*1.5,y:-32*2,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
@@ -102,6 +103,15 @@ class Level{
                     {level: 1, x:-32*27.2,y:32*7,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
                     {level: 1, x:-32*5,y:32*6,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
                     {level: 1, x:32*17,y:32*0,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"box",n1:-1,n2:0,mi:false},
+                ],
+                cables: [
+                    {x:-32*14,y:-32*8.5 - 13/2, type:"cablev", index: 7}, 
+                    {x:-32*14,y:-32*8.5 - 13/2 - 13, type:"cablev", index: 7},
+                    {x:-32*14,y:-32*8.5 - 13/2 - 23, type:"cableNode", index: 7},
+                    {x:-32*14 + 10,y:-32*8.5 - 13/2 - 23, type:"cableh", index: 7},
+                    {x:-32*14 + 23,y:-32*8.5 - 13/2 - 23, type:"cableh", index: 7},
+                    {x:-32*14 + 36,y:-32*8.5 - 13/2 - 23, type:"cableh", index: 7},
+                    {x:-32*14 + 36 + 13,y:-32*8.5 - 13/2 - 23, type:"cableNodeEnd", index: 7},
                 ],
                 mirror: []
             },
@@ -187,6 +197,7 @@ class Level{
                     {level: 2, x:32*30.5,y:32*20,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
                     {level: 2, x:32*35.5,y:32*20,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
                 ],
+                cables: [],
                 mirror: []
             },
             {
@@ -303,6 +314,7 @@ class Level{
                     {level: 3, x:-32*0,y:32*18,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
 
                 ],
+                cables: [],
                 mirror: []
             },
             /*

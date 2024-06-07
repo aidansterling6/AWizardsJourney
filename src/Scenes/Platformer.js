@@ -64,6 +64,8 @@ class Platformer extends Phaser.Scene {
     this.lazer = [];
     //an array holding all this.mirrors
     this.mirror = [];
+    //an array of the cables from sensors to triggers
+    this.cables = [];
     //mapImage
     this.mapImage = null;
 
@@ -130,6 +132,7 @@ class Platformer extends Phaser.Scene {
       this.checkPoint = level.checkPoint;
       this.rects = level.rects;
       this.mirror = level.mirror;
+      this.cables = level.cables;
       this.lazer = [];
       if (bReset) {
         this.respawnX = level.respawnX;
@@ -311,6 +314,56 @@ class Platformer extends Phaser.Scene {
         let tex = this.textures.get("gem").getSourceImage();
         this.gems[i].sprite.scale = 20 / tex.height;
       }
+      for (let i = 0; i < this.cables.length; i++) {
+        if(this.cables[i].type === "cablev"){
+          this.cables[i].spriteOn = this.add.sprite(100, 100, "wire_on");
+          this.cables[i].spriteOn.visible = false;
+          this.cables[i].spriteOff = this.add.sprite(100, 100, "wire_off");
+        }
+        else if(this.cables[i].type === "cableh"){
+          this.cables[i].spriteOn = this.add.sprite(100, 100, "wire_on");
+          this.cables[i].spriteOn.angle = 90;
+          this.cables[i].spriteOn.visible = false;
+
+          this.cables[i].spriteOff = this.add.sprite(100, 100, "wire_off");
+          this.cables[i].spriteOff.angle = 90;
+        }
+        else if(this.cables[i].type === "cableNode"){
+          this.cables[i].spriteOn = this.add.sprite(100, 100, "wire_node_on");
+          this.cables[i].spriteOn.angle = 90;
+          this.cables[i].spriteOn.visible = false;
+
+          this.cables[i].spriteOff = this.add.sprite(100, 100, "wire_node_off");
+          this.cables[i].spriteOff.angle = 90;
+        }
+        else if(this.cables[i].type === "cableNodeEnd"){
+          this.cables[i].spriteOn = this.add.sprite(100, 100, "wire_node_on");
+          this.cables[i].spriteOn.angle = 90;
+          this.cables[i].spriteOn.visible = false;
+          this.cables[i].spriteOn.scale = 1.5;
+
+          this.cables[i].spriteOff = this.add.sprite(100, 100, "wire_node_off");
+          this.cables[i].spriteOff.angle = 90;
+          this.cables[i].spriteOff.scale = 1.5;
+
+          this.cables[i].spriteOn.x = this.cables[i].x;
+          this.cables[i].spriteOn.y = this.cables[i].y;
+          this.cables[i].spriteOn.depth = -11000;
+
+          this.cables[i].spriteOff.x = this.cables[i].x;
+          this.cables[i].spriteOff.y = this.cables[i].y;
+          this.cables[i].spriteOff.depth = -11000;
+        }
+        if(this.cables[i].type !== "cableNodeEnd"){
+          this.cables[i].spriteOn.x = this.cables[i].x;
+          this.cables[i].spriteOn.y = this.cables[i].y;
+          this.cables[i].spriteOn.depth = -10000;
+
+          this.cables[i].spriteOff.x = this.cables[i].x;
+          this.cables[i].spriteOff.y = this.cables[i].y;
+          this.cables[i].spriteOff.depth = -10000;
+        }
+      }
     };
     this.Fill = color(255, 255, 255);
     this.Stroke = color(255, 255, 255);
@@ -335,6 +388,12 @@ class Platformer extends Phaser.Scene {
     this.load.image("gate2by5", "gate2by5.png");
     this.load.image("gate2by7", "gate2by7.png");
     this.load.image("gate6by2", "gate6by2.png");
+
+
+    this.load.image("wire_on", "wire_on.png");
+    this.load.image("wire_off", "wire_off.png");
+    this.load.image("wire_node_on", "wire_node_on.png");
+    this.load.image("wire_node_off", "wire_node_off.png");
 
 
 
@@ -815,6 +874,17 @@ class Platformer extends Phaser.Scene {
               this.rects[i].sprite1.y = this.rects[i].y - this.GlobalYOffset - this.rects[i].h - 0.5;
             }
           }
+        }
+      }
+      for(let i = 0; i < this.cables.length; i++){
+        let o = this.cables[i].index;
+        if(this.rects[o] && this.rects[o].HitDown){
+          this.cables[i].spriteOn.visible = true;
+          this.cables[i].spriteOff.visible = false;
+        }
+        else {
+          this.cables[i].spriteOn.visible = false;
+          this.cables[i].spriteOff.visible = true;
         }
       }
       for (var i = 0; i < this.rects.length; i++) {
