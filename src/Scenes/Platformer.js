@@ -5,7 +5,7 @@ class Platformer extends Phaser.Scene {
 
   init() {
     this.SCALE = 1.5;
-    //this.SCALE = 0.5;
+    //this.SCALE = 0.1;
     this.PARTICLE_VELOCITY = 50;
     this.width = config.width;
     this.height = config.height;
@@ -88,25 +88,40 @@ class Platformer extends Phaser.Scene {
           this.gems[i].sprite.destroy(true);
         }
       }
+      if(this.mapImage){
+        this.mapImage.destroy();
+      }
       if(num === 1){
         this.mapImage = this.add.sprite(this.width, this.height, "map1");
         this.mapImage.x = 0;
         this.mapImage.y = 0;
-        this.mapImage.depth = -10000;
+        this.mapImage.depth = 500;
+        this.mapImage2 = this.add.sprite(this.width, this.height, "map1Details");
+        this.mapImage2.x = 0;
+        this.mapImage2.y = 0;
+        this.mapImage2.depth = -10000;
       }
 
       if(num === 2){
         this.mapImage = this.add.sprite(this.width, this.height, "map2");
         this.mapImage.x = 0;
         this.mapImage.y = 0;
-        this.mapImage.depth = -10000;
+        this.mapImage.depth = 500;
+        this.mapImage2 = this.add.sprite(this.width, this.height, "map2Details");
+        this.mapImage2.x = 0;
+        this.mapImage2.y = 0;
+        this.mapImage2.depth = -10000;
       }
 
       if(num === 3){
         this.mapImage = this.add.sprite(this.width, this.height, "map3");
         this.mapImage.x = 0;
         this.mapImage.y = 0;
-        this.mapImage.depth = -10000;
+        this.mapImage.depth = 500;
+        this.mapImage2 = this.add.sprite(this.width, this.height, "map3Details");
+        this.mapImage2.x = 0;
+        this.mapImage2.y = 0;
+        this.mapImage2.depth = -10000;
       }
 
       //setup level based on data
@@ -145,6 +160,12 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
           let tex1 = this.textures.get("tileGrey").getSourceImage();
           this.rects[i].sprite1.scale = this.rects[i].w / tex1.height;
+        }
+        if (this.rects[i].type === "button") {
+          this.rects[i].sprite1 = this.add.sprite(1000, 1000, "button");
+          //let tex1 = this.textures.get("button").getSourceImage();
+          //this.rects[i].sprite1.scale = 1;
+          console.log("TEST");
         }
         if (this.rects[i].type === "pipeudm") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -261,7 +282,19 @@ class Platformer extends Phaser.Scene {
       for (let i = 0; i < this.rects.length; i++) {
         this.rects[i].sprite = null;
         if (this.rects[i].type.substring(0, 4) === "gate") {
-          this.rects[i].sprite = this.add.tileSprite(0, 0, this.rects[i].w, this.rects[i].h, "tileGrey2");
+          //this.rects[i].sprite = this.add.tileSprite(0, 0, this.rects[i].w, this.rects[i].h, "tileGrey2");
+          if(this.rects[i].w === 32*2 && this.rects[i].h === 32*4){
+            this.rects[i].sprite = this.add.sprite(this.rects[i].w, this.rects[i].h, "gate2by4");
+          }
+          if(this.rects[i].w === 32*2 && this.rects[i].h === 32*5){
+            this.rects[i].sprite = this.add.sprite(this.rects[i].w, this.rects[i].h, "gate2by5");
+          }
+          if(this.rects[i].w === 32*2 && this.rects[i].h === 32*7){
+            this.rects[i].sprite = this.add.sprite(this.rects[i].w, this.rects[i].h, "gate2by7");
+          }
+          if(this.rects[i].w === 32*6 && this.rects[i].h === 32*2){
+            this.rects[i].sprite = this.add.sprite(this.rects[i].w, this.rects[i].h, "gate6by2");
+          }
           let tex = this.textures.get("tileGrey2").getSourceImage();
           this.rects[i].sprite.tileScaleX = 20 / tex.width;
           this.rects[i].sprite.tileScaleY = 20 / tex.height;
@@ -290,6 +323,21 @@ class Platformer extends Phaser.Scene {
     this.load.image("map1", "map1.png");
     this.load.image("map2", "map2.png");
     this.load.image("map3", "map3.png");
+
+    this.load.image("map1Details", "map1Details.png");
+    this.load.image("map2Details", "map2Details.png");
+    this.load.image("map3Details", "map3Details.png");
+
+    this.load.image("button", "button.png");
+
+
+    this.load.image("gate2by4", "gate2by4.png");
+    this.load.image("gate2by5", "gate2by5.png");
+    this.load.image("gate2by7", "gate2by7.png");
+    this.load.image("gate6by2", "gate6by2.png");
+
+
+
     this.load.image("metal", "tiles/metalCenter.png");
     this.load.image("pipe1", "tiles/pipeGreen_25.png");
     this.load.image("pipe2", "tiles/pipeGreen_26.png");
@@ -299,7 +347,8 @@ class Platformer extends Phaser.Scene {
     this.load.image("pipe6", "tiles/pipeGreen_23.png");
     this.load.image("tileGrey", "tiles/tileGrey_01.png");
     this.load.image("tileGrey2", "tiles/tile_0022.png");
-    this.load.image("background", "tiles/Marble/tile_0070.png");
+    //this.load.image("background", "tiles/Marble/tile_0070.png");
+    this.load.image("background", "TX Tileable - Dungeon Wall.png");
     this.load.image("gem", "tiles/platformPack_item001.png");
 
     this.load.audio('jump', ['sounds/impactSoft_heavy_001.ogg']);
@@ -752,11 +801,19 @@ class Platformer extends Phaser.Scene {
           //draw and change shape when pressed
           if (this.rects[i].HitDown === true) {
             this.fill(200, 0, 0);
-            this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
+            //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
+            if (this.rects[i].sprite1) {
+              this.rects[i].sprite1.x = this.rects[i].x - this.GlobalXOffset;
+              this.rects[i].sprite1.y = this.rects[i].y - this.GlobalYOffset;
+            }
           }
           else {
             this.fill(200, 0, 0);
-            this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - (this.rects[i].h + 10) / 2 - this.GlobalYOffset, this.rects[i].w, (this.rects[i].h + 10)/2);
+            //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - (this.rects[i].h + 10) / 2 - this.GlobalYOffset, this.rects[i].w, (this.rects[i].h + 10)/2);
+            if (this.rects[i].sprite1) {
+              this.rects[i].sprite1.x = this.rects[i].x - this.GlobalXOffset;
+              this.rects[i].sprite1.y = this.rects[i].y - this.GlobalYOffset - this.rects[i].h - 0.5;
+            }
           }
         }
       }
@@ -1480,6 +1537,7 @@ class Platformer extends Phaser.Scene {
           //create its this.mirror
           if (this.rects[i].mi === false) {
             this.mirror.push({ x: 304, y: 266, l: this.rects[i].l, a: 45, c: i, r: false, tx: 0, ty: 0, b: false, draw: true });
+            this.mirror.push({ x: 304, y: 266, l: this.rects[i].l, a: -45, c: i, r: false, tx: 0, ty: 0, b: false, draw: true });
             this.rects[i].mi = true;
           }
 
@@ -1717,7 +1775,7 @@ class Platformer extends Phaser.Scene {
       }
     };
     //setup background tileing sprite
-    this.paralax = this.add.tileSprite(0, 0, 1000, 1000, "tileGrey");
+    this.paralax = this.add.tileSprite(0, 0, 256*20, 256*20, "background");
     this.paralax.depth = -100;
 
     //setup player sprite
@@ -1781,19 +1839,24 @@ class Platformer extends Phaser.Scene {
 
 
     //handle paralax background
-    let tmpScale = 0.2
+    let tmpScale = 1;
     let ratio = this.width / this.height;
     this.paralax.tileScaleX = tmpScale / ratio;
     this.paralax.tileScaleY = tmpScale;
-    this.paralax.tilePositionX = this.player.x;
-    this.paralax.tilePositionY = this.player.y;
-    this.paralax.displayWidth = this.width;
-    this.paralax.displayHeight = this.height;
-    this.paralax.x = this.player.x;
-    this.paralax.y = this.player.y;
+    // this.paralax.tilePositionX = this.player.x*this.SCALE;
+    // this.paralax.tilePositionY = this.player.y*this.SCALE;
+    this.paralax.tilePositionX = 0;
+    this.paralax.tilePositionY = 0;
+    // this.paralax.displayWidth = this.width;
+    // this.paralax.displayHeight = this.height;
+    this.paralax.displayWidth = 3000;
+    this.paralax.displayHeight = 3000;
+    this.paralax.x = 160;
+    this.paralax.y = -500;
+    this.paralax.depth = -100000;
 
 
-    this.paralax.visible = false;
+    //this.paralax.visible = false;
 
     //load level for first time
     if (this.start) {

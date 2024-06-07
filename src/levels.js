@@ -82,13 +82,13 @@ class Level{
 
 
 
-                    {level: -1, x:-32*16,y:-32*8.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
-                    {level: -1, x:-32*14,y:-32*1.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:2,n2:0,mi:false},
-                    {level: -1, x:-32*15.5,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:3,n2:0,mi:false},
-                    {level: -1, x:-32*2,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
-                    {level: -1, x:32*5,y:32*5.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
-                    {level: -1, x:32*14.05,y:32*0.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:5,n2:0,mi:false},
-                    {level: -1, x:32*25,y:-32*0.5,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:6,n2:0,mi:false},
+                    {level: 1, x:-32*14,y:-32*8.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
+                    {level: 1, x:-32*14,y:-32*1.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:2,n2:0,mi:false},
+                    {level: 1, x:-32*15.5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:3,n2:0,mi:false},
+                    {level: 1, x:-32*2,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
+                    {level: 1, x:32*5,y:32*5.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:4,n2:0,mi:false},
+                    {level: 1, x:32*14.05,y:32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:5,n2:0,mi:false},
+                    {level: 1, x:32*25,y:-32*0.5,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:6,n2:0,mi:false},
 
 
                     {level: 1, x:32*7.5,y:32*3,w:32*2,h:32*0.25,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false, p:true},
@@ -184,8 +184,8 @@ class Level{
                     {level: 2, x:32*43 - 3,y:32*16.45 - 20 + 40,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"pipelub",n1:-1,n2:0,mi:false, freeze: true},
                     {level: 2, x:32*43 - 3 - 40,y:32*16.45 - 20 + 40,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"pipedrb",n1:-1,n2:0,mi:false, freeze: true},
 
-                    {level: -1, x:32*30.5,y:32*20,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
-                    {level: -1, x:32*35.5,y:32*20,w:20,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
+                    {level: 2, x:32*30.5,y:32*20,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
+                    {level: 2, x:32*35.5,y:32*20,w:40,h:0,ax:0,ay:0,HitDown:false,type:"button",n1:1,n2:0,mi:false},
                 ],
                 mirror: []
             },

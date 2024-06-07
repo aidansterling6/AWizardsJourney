@@ -33,7 +33,7 @@ let config = {
         target: 90,
         forceSetTimeOut: true
     },
-    antialias: true,
+    //antialias: true,
     // width: 1440,
     // height: 900,
     scale: {
