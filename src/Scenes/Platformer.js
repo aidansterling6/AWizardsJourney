@@ -451,7 +451,7 @@ class Platformer extends Phaser.Scene {
           this.rects[i].lx = this.rects[i].x;
           //move camera to block
           this.player.x = this.rects[i].x - this.GlobalXOffset;
-          this.player.y = this.rects[i].y - 2 - this.GlobalYOffset;
+          this.player.y = this.rects[i].y - 3 - this.GlobalYOffset;
           //if you fall, die
           if (this.rects[i].y > 400) {
             this.dead = true;
@@ -552,8 +552,11 @@ class Platformer extends Phaser.Scene {
           }
           if (Math.abs(this.rects[i].lx - this.rects[i].x) > 0.1) {
             if (this.DKey.isDown) {
-              this.player.setFlip(true, false);
-              this.player.anims.play('walk', true);
+              this.player.resetFlip();
+              // this.player.setFlip(true, false);
+              if(this.rects[i].HitDown){
+                this.player.anims.play('walk', true);
+              }
 
               this.walking.startFollow(this.player, this.player.displayWidth / 2 - 10, this.player.displayHeight / 2 - 3, true);
               this.walking.setParticleSpeed(-this.PARTICLE_VELOCITY, 0);
@@ -568,8 +571,11 @@ class Platformer extends Phaser.Scene {
               }
             }
             if (this.AKey.isDown) {
-              this.player.resetFlip();
-              this.player.anims.play('walk', true);
+              this.player.setFlip(true, false);
+              // this.player.resetFlip();
+              if(this.rects[i].HitDown){
+                this.player.anims.play('walk', true);
+              }
 
               this.walking.startFollow(this.player, this.player.displayWidth / 2 - 10, this.player.displayHeight / 2 - 3, false);
               this.walking.setParticleSpeed(this.PARTICLE_VELOCITY, 0);
@@ -586,13 +592,15 @@ class Platformer extends Phaser.Scene {
             }
             this.walkSound.setRate(0.3 + (Math.abs(this.rects[i].lx - this.rects[i].x) * 0.2));
           }
-          else {
+          else if(this.rects[i].HitDown) {
             this.player.anims.play('idle');
             this.walkSound.stop();
           }
 
           if (!this.rects[i].HitDown) {
-            this.player.anims.play('jump');
+            if(!(this.player.anims.currentAnim.key === 'jump')){
+              this.player.anims.play('jump');
+            }
             this.walkSound.stop();
           }
         }
@@ -648,12 +656,12 @@ class Platformer extends Phaser.Scene {
           }
           //draw and change shape when pressed
           if (this.rects[i].HitDown === true) {
-            this.fill(255, 0, 255);
+            this.fill(200, 0, 0);
             this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
           }
           else {
-            this.fill(255, 0, 255);
-            this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - (this.rects[i].h + 10) / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h + 10);
+            this.fill(200, 0, 0);
+            this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - (this.rects[i].h + 10) / 2 - this.GlobalYOffset, this.rects[i].w, (this.rects[i].h + 10)/2);
           }
         }
       }
@@ -1503,7 +1511,7 @@ class Platformer extends Phaser.Scene {
     this.paralax.depth = -100;
 
     //setup player sprite
-    this.player = this.add.sprite(200, 200, "platformer_characters", "tile_0000.png");
+    this.player = this.add.sprite(200, 200, "platformer_characters", "sprite23");
     this.player.depth = 1000;
 
     //setup particle effects
