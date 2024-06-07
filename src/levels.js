@@ -24,7 +24,7 @@ class Level{
                 respawnX: -550,
                 respawnY: -285,
                 noMagic: [{x:700,y:-150,w:150,h:180}],
-                checkPoint: [{x:-890, y:-90, bottom:-220, top:-80, end: false}, {x:450, y:20, bottom:-80, top:40, end: false}, {x:1250, y:0, bottom:-250, top:40, end: true}],
+                checkPoint: [{x:-890, y:-90, bottom:-220, top:-80, end: false}, {x:450, y:20, bottom:-32*3, top:32*0.5, end: false}, {x:1250, y:0, bottom:-250, top:40, end: true}],
                 gems: [
                     {x:-246.7, y:-103.3, w:10, h:10},
                     {x:-450, y:-137.74, w:10, h:10},
@@ -190,8 +190,125 @@ class Level{
                 mirror: []
             },
             {
-                respawnX: 100,
-                respawnY: 231,
+                respawnX: -975,
+                respawnY: -180,
+                noMagic: [
+                ],
+                checkPoint: [
+                    {x:32*11.5, y:-32*1, bottom:-32*3, top:-32*1, end: false},
+                    {x:-32*17, y:32*9, bottom:32*6, top:32*9, end: false},
+                    {x:32*23, y:32*9, bottom:32*14, top:32*19, end: true},
+                ],
+                gems: [
+                ],
+                rects: [
+                    {level: 3, x:0,y:0,w:10,h:27,ax:0,ay:0,HitDown:false,type:"player",n1:-1,n2:0,mi:false},
+
+                    {level: 3, x:-32*18,y:-32*5.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//1
+                    {level: 3, x:-32*6,y:-32*15,w:32*6,h:32*2,ax:0,ay:0,HitDown:false,type:"gater",n1:-1,n2:0,mi:false},//2
+                    {level: 3, x:-32*3,y:-32*15,w:32*6,h:32*2,ax:0,ay:0,HitDown:false,type:"gatel",n1:-1,n2:0,mi:false},//3
+                    {level: 3, x:32*6,y:-32*5.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//4
+                    {level: 3, x:-32*15,y:32*7.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//5
+                    {level: 3, x:-32*7,y:32*18.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//6
+                    {level: 3, x:32*8,y:32*18.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//7
+
+                    {level: -3, x:-32*24.5,y:-32*4,w:32*19,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*33,y:-32*9,w:32*2,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*21.5,y:-32*13,w:32*25,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*20,y:-32*11,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*16,y:-32*13,w:32*2,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*4,y:-32*13,w:32*2,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*8,y:-32*11,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*13,y:-32*17,w:32*8,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*1,y:-32*17,w:32*8,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*2,y:-32*18.5,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*10,y:-32*18.5,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*6,y:-32*20,w:32*10,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*13,y:-32*13,w:32*32,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*6,y:-32*0,w:32*22,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*16,y:-32*2,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*6,y:32*0,w:32*6,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*1,y:32*3,w:32*4,h:32*4,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*1,y:32*5.5,w:32*4,h:32*1,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*12,y:32*5.5,w:32*4,h:32*1,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*13,y:32*2.5,w:32*2,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*14.5,y:32*1,w:32*5,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*17,y:32*2.5,w:32*2,h:32*7,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*20,y:32*5,w:32*6,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*28,y:-32*4.5,w:32*2,h:32*19,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*15.5,y:-32*0,w:32*3,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*18,y:-32*4,w:32*14,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*20,y:32*8.5,w:32*18,h:32*11,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*9,y:32*0,w:32*6,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*6,y:32*11.5,w:32*26,h:32*5,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*22,y:32*13,w:32*2,h:32*18,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*9,y:32*15,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*6,y:32*13,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*10,y:32*13,w:32*2,h:32*6,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*10,y:32*10.5,w:32*8,h:32*3,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*11,y:32*20,w:32*32,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:-32*13,y:32*21,w:32*20,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+                    {level: -3, x:32*26,y:32*17,w:32*2,h:32*8,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
+
+                    {level: 3, x:-32*31.5,y:-32*5.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:0,n2:0,mi:false, freeze: true},
+                    {level: 3, x:-32*25,y:-32*5.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*21.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:1,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+
+                    {level: 3, x:-32*14.5,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:0,n2:0,mi:false, freeze: true},
+                    {level: 3, x:32*2.5,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:-180,n2:0,mi:false, freeze: true},
+
+                    {level: 3, x:-32*13,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*13,y:-32*2.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*11.8,y:-32*2.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*11.8,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+
+                    {level: 3, x:-32*7.7,y:-32*17.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*7.7,y:-32*18.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*6.5,y:-32*17.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*6.5,y:-32*18.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+                    {level: 3, x:-32*5.2,y:-32*17.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*5.2,y:-32*18.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*4,y:-32*17.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*4,y:-32*18.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+
+                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:2,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:3,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+                    {level: 3, x:32*2.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:4,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+                    {level: 3, x:-32*11,y:32*2,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"lazer",n1:0,n2:0,mi:false, freeze: true},
+                    {level: 3, x:-32*11,y:32*4,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"sense",n1:5,n2:0,mi:false, l: Math.sqrt(2*32*2*32*2)*0.5},
+
+                    {level: 3, x:-32*5,y:32*9,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*6.2,y:32*9,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*7.4,y:32*9,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*8.6,y:32*9,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+
+                    {level: 3, x:32*10.5,y:32*7.5,w:32*1,h:32*1,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1*32*1)*0.5, freeze: true},
+                    {level: 3, x:32*10.5,y:32*8.5,w:32*1,h:32*1,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1*32*1)*0.5, freeze: true},
+
+
+
+                    {level: 3, x:-32*17,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:90,n2:0,mi:false, freeze: true},
+                    {level: 3, x:-32*10.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:6,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*13,y:32*20,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
+                    {level: 3, x:-32*14.2,y:32*20,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
+                    {level: 3, x:-32*13.6,y:32*18,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
+
+                    {level: 3, x:32*4.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:7,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*0,y:32*18,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
+
+                ],
+                mirror: []
+            },
+            /*
+            {
+                respawnX: 0,
+                respawnY: 256,
                 noMagic: [{x:646,y:200,w:109,h:40}],
                 checkPoint: [204,1100,1650,2080,2223],
                 gems: [
@@ -266,6 +383,8 @@ class Level{
                 ],
                 mirror: []
             },
+            */
+            /*
             {
                 respawnX: 100,
                 respawnY: 200,
@@ -367,6 +486,7 @@ class Level{
                     {x:335,y:118,l:100,a:89.9999,c:1,r:false,tx:-37,ty:-118,b:false}
                 ]
             },
+            */
             {
                 respawnX: 0,
                 respawnY: 0,
