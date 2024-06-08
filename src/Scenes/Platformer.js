@@ -10,7 +10,7 @@ class Platformer extends Phaser.Scene {
     this.width = config.width;
     this.height = config.height;
     //the level the player is on
-    this.CurrentLevel = 1;
+    this.CurrentLevel = 3;
 
     this.score = 0;
     this.scores = {};
@@ -83,6 +83,14 @@ class Platformer extends Phaser.Scene {
         }
         if (this.rects[i].sprite2) {
           this.rects[i].sprite2.destroy(true);
+        }
+      }
+      for (let i = 0; i < this.cables.length; i++) {
+        if (this.cables[i].spriteOn) {
+          this.cables[i].spriteOn.destroy(true);
+        }
+        if (this.cables[i].spriteOff) {
+          this.cables[i].spriteOff.destroy(true);
         }
       }
       for (let i = 0; i < this.gems.length; i++) {
