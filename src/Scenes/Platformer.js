@@ -10,15 +10,18 @@ class Platformer extends Phaser.Scene {
     this.width = config.width;
     this.height = config.height;
     //the level the player is on
-    this.CurrentLevel = 3;
+    this.CurrentLevel = 1;
 
     this.score = 0;
     this.scores = {};
     this.maxScore = function () {
       let out = 0;
-      for (let key in this.scores) {
-        out += this.scores[key];
+      for(let i = 0; i < Level.Levels.length; i++){
+        out += Level.Levels[i].gems.length;
       }
+      //for (let key in this.scores) {
+      //  out += this.scores[key];
+      //}
       return out;
     }
     this.btime = 0;
@@ -56,6 +59,8 @@ class Platformer extends Phaser.Scene {
     this.noMagic = [{ x: 646, y: 200, w: 109, h: 40 }];
     //an array holding all of the checkpoints
     this.checkPoint = [204, 1100, 1650, 2080, 2223];
+    //turoial mesages
+    this.texts = [];
     //an array holding all of the blocks
     this.rects = [];
     //an array holding all gems
@@ -85,6 +90,11 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite2.destroy(true);
         }
       }
+      for(let i = 0; i < this.texts.length; i++){
+        if (this.texts[i].text) {
+          this.texts[i].text.destroy(true);
+        }
+      }
       for (let i = 0; i < this.cables.length; i++) {
         if (this.cables[i].spriteOn) {
           this.cables[i].spriteOn.destroy(true);
@@ -100,6 +110,7 @@ class Platformer extends Phaser.Scene {
       }
       if(this.mapImage){
         this.mapImage.destroy();
+        this.mapImage2.destroy();
       }
       if(num === 1){
         this.mapImage = this.add.sprite(this.width, this.height, "map1");
@@ -138,6 +149,7 @@ class Platformer extends Phaser.Scene {
       this.dead = false;
       this.noMagic = level.noMagic;
       this.checkPoint = level.checkPoint;
+      this.texts = level.texts;
       this.rects = level.rects;
       this.mirror = level.mirror;
       this.cables = level.cables;
@@ -161,6 +173,12 @@ class Platformer extends Phaser.Scene {
             this.mirror.push({x:0, y:0,l:this.rects[i].w/2,a:0.00001,c:i,r:false,tx:0,ty:-this.rects[i].h/2,b:false, draw: false});
           }
         }
+      }
+
+      for(let i = 0; i < this.texts.length; i++){
+        this.texts[i].text = this.add.text(this.texts[i].x, this.texts[i].y, this.texts[i].message, this.texts[i].settings);
+        this.texts[i].text.visible = true;
+        this.texts[i].text.depth = 1000;
       }
 
       //setup textures for loaded objects
@@ -248,10 +266,12 @@ class Platformer extends Phaser.Scene {
 
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe3");
           let tex2 = this.textures.get("pipe3").getSourceImage();
-          let tmp = 9;
-          this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          this.rects[i].spriteShiftx = -tmp / 2;
-          this.rects[i].spriteShifty = -tmp / 2;
+          this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
+          //this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
+          //let tmp = 9;
+          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
+          //this.rects[i].spriteShiftx = -tmp / 2;
+          //this.rects[i].spriteShifty = -tmp / 2;
         }
         if (this.rects[i].type === "pipelub") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -260,10 +280,12 @@ class Platformer extends Phaser.Scene {
 
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe3");
           let tex2 = this.textures.get("pipe3").getSourceImage();
-          let tmp = 9;
-          this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          this.rects[i].spriteShiftx = -tmp / 2;
-          this.rects[i].spriteShifty = -tmp / 2;
+          this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
+          //let tex2 = this.textures.get("pipe3").getSourceImage();
+          //let tmp = 9;
+          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
+          //this.rects[i].spriteShiftx = -tmp / 2;
+          //this.rects[i].spriteShifty = -tmp / 2;
         }
         if (this.rects[i].type === "pipedrb") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -272,10 +294,12 @@ class Platformer extends Phaser.Scene {
 
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe6");
           let tex2 = this.textures.get("pipe6").getSourceImage();
-          let tmp = 9;
-          this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          this.rects[i].spriteShiftx = tmp / 2;
-          this.rects[i].spriteShifty = tmp / 2;
+          this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
+          //let tex2 = this.textures.get("pipe6").getSourceImage();
+          //let tmp = 9;
+          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
+          //this.rects[i].spriteShiftx = tmp / 2;
+          //this.rects[i].spriteShifty = tmp / 2;
         }
         if (this.rects[i].type === "pipedlm") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -284,10 +308,11 @@ class Platformer extends Phaser.Scene {
 
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe4");
           let tex2 = this.textures.get("pipe4").getSourceImage();
-          let tmp = 5;
-          this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          this.rects[i].spriteShiftx = -tmp / 2;
-          this.rects[i].spriteShifty = tmp / 2;
+          this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
+          //let tmp = 5;
+          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
+          //this.rects[i].spriteShiftx = -tmp / 2;
+          //this.rects[i].spriteShifty = tmp / 2;
         }
       }
       for (let i = 0; i < this.rects.length; i++) {
@@ -406,12 +431,21 @@ class Platformer extends Phaser.Scene {
 
 
     this.load.image("metal", "tiles/metalCenter.png");
-    this.load.image("pipe1", "tiles/pipeGreen_25.png");
-    this.load.image("pipe2", "tiles/pipeGreen_26.png");
-    this.load.image("pipe3", "tiles/pipeGreen_36.png");
-    this.load.image("pipe4", "tiles/pipeGreen_24.png");
-    this.load.image("pipe5", "tiles/pipeGreen_35.png");
-    this.load.image("pipe6", "tiles/pipeGreen_23.png");
+    // this.load.image("pipe1", "tiles/pipeGrey_25.png");
+    // this.load.image("pipe2", "tiles/pipeGrey_26.png");
+    // this.load.image("pipe3", "tiles/pipeGrey_36.png");
+    // this.load.image("pipe4", "tiles/pipeGrey_24.png");
+    // this.load.image("pipe5", "tiles/pipeGrey_35.png");
+    // this.load.image("pipe6", "tiles/pipeGrey_23.png");
+
+    this.load.image("pipe1", "pipes/greyV.png");
+    this.load.image("pipe2", "pipes/greyH.png");
+    this.load.image("pipe3", "pipes/greyUL.png");
+    this.load.image("pipe4", "pipes/greyDL.png");
+    this.load.image("pipe5", "pipes/greyUR.png");
+    this.load.image("pipe6", "pipes/greyDR.png");
+
+
     this.load.image("tileGrey", "tiles/tileGrey_01.png");
     this.load.image("tileGrey2", "tiles/tile_0022.png");
     //this.load.image("background", "tiles/Marble/tile_0070.png");
@@ -451,8 +485,9 @@ class Platformer extends Phaser.Scene {
     //setup text objects
     this.win = this.add.text(0, 0, 'You Won!!!, press enter to restart the game', { fontFamily: 'Arial', fontSize: 24, color: '#ffffff' });
     this.scoreText = this.add.text(0, 0, 'Score: 0', { fontFamily: 'Arial', fontSize: 15, color: '#ffffff' });
-    this.helpTxt = this.add.text(0, 0, 'You Won!!!, press enter to restart the game', { fontFamily: 'Arial', fontSize: 15, color: '#000000' });
-    this.helpTxt.visible = true;
+    //this.helpTxt = this.add.text(0, 0, 'You Won!!!, press enter to restart the game', { fontFamily: 'Arial', fontSize: 15, color: '#ffffff' });
+    //this.helpTxt.visible = true;
+
 
     //setup keyboard controls
     this.WKey = this.input.keyboard.addKey("W");
@@ -1722,7 +1757,7 @@ class Platformer extends Phaser.Scene {
             for (var o = 0; o < this.rects.length; o++) {
               if ((this.rects[o].type === "button" || this.rects[o].type === "sense") && this.rects[o].n1 === i) {
                 this.stroke(255, 0, 0);
-                this.line(this.rects[o].x - this.GlobalXOffset, this.rects[o].y - this.GlobalYOffset, this.rects[i].x - this.GlobalXOffset, this.rects[i].y - this.GlobalYOffset);
+                //this.line(this.rects[o].x - this.GlobalXOffset, this.rects[o].y - this.GlobalYOffset, this.rects[i].x - this.GlobalXOffset, this.rects[i].y - this.GlobalYOffset);
               }
             }
           }
@@ -1844,8 +1879,8 @@ class Platformer extends Phaser.Scene {
     //logic and drawing of the no magic zones
     this.noMagicZone = function (draw) {
       for (var i = 0; i < this.noMagic.length; i++) {
-        this.stroke(179, 0, 0, 200);
-        this.fill(255, 0, 0, 80);
+        this.stroke(179, 0, 0, 100);
+        this.fill(255, 0, 0, 40);
         if (this.mouseIsPressed && this.mouseX > this.noMagic[i].x - this.GlobalXOffset && this.mouseX < this.noMagic[i].x - this.GlobalXOffset + this.noMagic[i].w && this.mouseY > this.noMagic[i].y - this.GlobalYOffset && this.mouseY < this.noMagic[i].y - this.GlobalYOffset + this.noMagic[i].h) {
           this.dragIndex = -1;
         }
@@ -1987,11 +2022,11 @@ class Platformer extends Phaser.Scene {
             this.loadLevel(this.CurrentLevel, true);
           }
         }
-        if (!this.checkPoint[i].end && this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "button" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i].x - 5 && this.rects[o].x < this.checkPoint[i].x + 5 && this.rects[o].y + this.rects[o].h/2 > this.checkPoint[i].bottom && this.rects[o].y - this.rects[o].h/2 < this.checkPoint[i].top) {
+        if (this.checkPoint[i] && !this.checkPoint[i].end && this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "button" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i].x - 5 && this.rects[o].x < this.checkPoint[i].x + 5 && this.rects[o].y + this.rects[o].h/2 > this.checkPoint[i].bottom && this.rects[o].y - this.rects[o].h/2 < this.checkPoint[i].top) {
           this.dead = true;
         }
       }
-      if(!this.checkPoint[i].end){
+      if(this.checkPoint[i] && !this.checkPoint[i].end){
       this.stroke(255, 0, 0, 150);
       this.strokeWeight(10);
       //this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
@@ -2026,12 +2061,13 @@ class Platformer extends Phaser.Scene {
     //handle help text
     if (this.HKey.isDown && this.btime <= 0) {
       this.btime = 10;
-      if (this.helpTxt.visible) {
-        this.helpTxt.visible = false;
-      } else {
-        this.helpTxt.visible = true;
-      }
+      // if (this.helpTxt.visible) {
+      //   this.helpTxt.visible = false;
+      // } else {
+      //  // this.helpTxt.visible = true;
+      // }
     }
+    //this.helpTxt.visible = false;
     if(this.mouseIsPressed){
       console.log("mouse: " + this.mouseX + ", " + this.mouseY);
       console.log("{x:" + Math.round(this.mouseX*100)/100 + ", y:" + Math.round(this.mouseY*100)/100 + ", w:10, h:10},");
@@ -2039,14 +2075,14 @@ class Platformer extends Phaser.Scene {
     }
     //handle menus
     this.btime--;
-    this.helpTxt.x = this.player.x;
-    this.helpTxt.y = this.player.y + 50;
-    this.helpTxt.setOrigin(0.5, 0.5);
-    this.helpTxt.depth = 1000;
-    this.helpTxt.text = "      WASD to move. Click and drag on boxes to move them.\nPress R to reset to last checkpoint. Press H to toggle this menu.";
+    // this.helpTxt.x = this.player.x;
+    // this.helpTxt.y = this.player.y + 50;
+    // this.helpTxt.setOrigin(0.5, 0.5);
+    // this.helpTxt.depth = 1000;
+    // this.helpTxt.text = "      WASD to move. Click and drag on boxes to move them.\nPress R to reset to last checkpoint. Press H to toggle this menu.";
     this.win.visible = false;
     if (this.CurrentLevel > 3) {
-      this.helpTxt.visible = false;
+      //this.helpTxt.visible = false;
       this.background(0, 0, 0);
       this.win.x = this.player.x;
       this.win.y = this.player.y - 150;

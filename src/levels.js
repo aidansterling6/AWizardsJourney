@@ -21,10 +21,19 @@ class Level{
     static Levels = 
         [
             {
-                respawnX: -550,
+                respawnX: -560,
                 respawnY: -285,
                 noMagic: [{x:700,y:-150,w:150,h:180}],
                 checkPoint: [{x:-890, y:-90, bottom:-220, top:-80, end: false}, {x:400, y:20, bottom:-32*3, top:32*0.5, end: false}, {x:1250, y:0, bottom:-250, top:40, end: true}],
+                texts: [
+                    {x:557, y:53, message: "This is an anti-magic field", settings:{}},
+                    {x:534, y:69, message: "You can't drag objects inside it", settings:{}},
+                    {x:-510, y:-35, message: "Push the box", settings:{}},
+                    {x:-525, y:-15, message: "onto the button", settings:{}},
+                    {x:-640.42, y:-355.77, message: "use WASD to move", settings:{}},
+                    {x:-632.42, y:-342, message: "use R to reset", settings:{}},
+                    {x:-1037, y:248.43, message: "Click and drag the box to lift it", settings:{}}
+                ],
                 gems: [
                     {x:-246.7, y:-103.3, w:10, h:10},
                     {x:-450, y:-137.74, w:10, h:10},
@@ -372,6 +381,7 @@ class Level{
                     {x:32*19.5, y:141, bottom:0, top:161, end: false},
                     {x:32*49.5, y:32*9, bottom:32*4, top:32*9, end: true}
                 ],
+                texts: [],
                 gems: [
                     {x:-1120, y:38.63, w:10, h:10},
                     {x:-1100, y:38.63, w:10, h:10},
@@ -519,8 +529,10 @@ class Level{
                 checkPoint: [
                     {x:32*11.5, y:-32*1, bottom:-32*3, top:-32*1, end: false},
                     {x:-32*17, y:32*9, bottom:32*6, top:32*9, end: false},
+                    {x:-86.82588314784488, y:594.5, bottom:32*14, top:32*19, end: false},
                     {x:32*23, y:32*9, bottom:32*14, top:32*19, end: true},
                 ],
+                texts: [],
                 gems: [
                 ],
                 rects: [
@@ -589,19 +601,19 @@ class Level{
                     {level: 3, x:32*2.5,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:-180,n2:0,mi:false, freeze: true},
 
                     {level: 3, x:-32*13,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*13,y:-32*2.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*11.8,y:-32*2.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*13,y:-32*2.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*11.8,y:-32*2.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
                     {level: 3, x:-32*11.8,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
 
 
                     {level: 3, x:-32*7.7,y:-32*17.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*7.7,y:-32*18.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*6.5,y:-32*17.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*7.7,y:-32*18.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*6.5,y:-32*17.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
                     {level: 3, x:-32*6.5,y:-32*18.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
 
                     {level: 3, x:-32*5.2,y:-32*17.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*5.2,y:-32*18.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*4,y:-32*17.75,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*5.2,y:-32*18.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
+                    {level: 3, x:-32*4,y:-32*17.8,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
                     {level: 3, x:-32*4,y:-32*18.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:-135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
 
 
@@ -1013,6 +1025,7 @@ class Level{
                 respawnY: 0,
                 noMagic: [],
                 checkPoint: [],
+                texts: [],
                 gems: [],
                 rects: [
                     {level: 4, x:0,y:0,w:10,h:20,ax:0,ay:0,HitDown:false,type:"player",n1:-1,n2:0,mi:false},
