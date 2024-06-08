@@ -41,7 +41,7 @@ let config = {
         autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
         // ...
     },
-    scene: [Load, Start, Credits, Controls, Platformer]
+    scene: [Start2, Start, Load, Credits, Controls, Platformer]
 }
 
 var cursors;
