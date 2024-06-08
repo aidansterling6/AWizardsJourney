@@ -1946,8 +1946,10 @@ class Platformer extends Phaser.Scene {
 
     //move score with player
     this.scoreText.text = "Score: " + this.score;
-    this.scoreText.x = this.player.x + 200;
-    this.scoreText.y = this.player.y - 270;
+    // this.scoreText.x = this.player.x + 200;
+    // this.scoreText.y = this.player.y - 270;
+    this.scoreText.x = this.player.x + 250;
+    this.scoreText.y = this.player.y - 325;
     this.scoreText.setOrigin(0.5, 0.5);
     this.scoreText.visible = true;
     this.scoreText.depth = 1000;
