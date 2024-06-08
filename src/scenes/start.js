@@ -21,13 +21,14 @@ class Start extends Phaser.Scene {
     create() {
         let my = this.my;
         let { width, height } = this.sys.game.canvas;
+        //setup menu music
         if(!this.menuMusic){
             this.menuMusic = this.sound.add("menuMusic");
             this.menuMusic.loop = true;
             this.menuMusic.volume = 1.0;
             this.menuMusic.play();
         }
-
+        //setup text for menus
         this.text = this.add.text(width/4, height/4, 'Click here to play', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff' });
         this.text2 = this.add.text((3*width)/4, height/4, 'Click here for credits', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff' });
         this.text3 = this.add.text(width/2, height/2, 
@@ -47,16 +48,14 @@ class Start extends Phaser.Scene {
         this.text2.setOrigin(0.5, 0.5);
         this.text3.setOrigin(0.5, 0.5);
         this.text4.setOrigin(0.5, 0.5);
+        //handle mouse interaction and navigation menus
         this.mouseDown = this.input.on('pointerdown', (pointer) => {
             if(this.mode === "main"){
                 if(game.input.mousePointer.x < width/2){
-                    //this.scene.start("Control");
                     this.mode = "controls"
-                    //this.menuMusic.stop();
                 }
                 else{
                     this.mode = "credits"
-                    //this.scene.start("Credits");
                 }
             }
             else if(this.mode === "credits"){
@@ -81,10 +80,12 @@ class Start extends Phaser.Scene {
     update() {
         let { width, height } = this.sys.game.canvas;
         let my = this.my;
+        //position the menu art
         this.backgroundSprite.x = width;
         this.backgroundSprite.y = (3*height)/4;
         this.backgroundSprite.scale = 0.5;
 
+        //draw the correct text
         this.text.visible = false;
         this.text2.visible = false;
         this.text3.visible = false;
@@ -100,20 +101,17 @@ class Start extends Phaser.Scene {
             this.text4.visible = true;
         }
 
+        //handle background bricks
         let tmpScale = 1.5;
-    let ratio = width / height;
-    this.paralax.tileScaleX = tmpScale / ratio;
-    this.paralax.tileScaleY = tmpScale;
-    // this.paralax.tilePositionX = this.player.x*this.SCALE;
-    // this.paralax.tilePositionY = this.player.y*this.SCALE;
-    this.paralax.tilePositionX = 0;
-    this.paralax.tilePositionY = 0;
-    // this.paralax.displayWidth = this.width;
-    // this.paralax.displayHeight = this.height;
-    this.paralax.displayWidth = 3000;
-    this.paralax.displayHeight = 3000;
-    this.paralax.x = 160;
-    this.paralax.y = -500;
-    this.paralax.depth = -100000;
+        let ratio = width / height;
+        this.paralax.tileScaleX = tmpScale / ratio;
+        this.paralax.tileScaleY = tmpScale;
+        this.paralax.tilePositionX = 0;
+        this.paralax.tilePositionY = 0;
+        this.paralax.displayWidth = 3000;
+        this.paralax.displayHeight = 3000;
+        this.paralax.x = 160;
+        this.paralax.y = -500;
+        this.paralax.depth = -100000;
     }
 }

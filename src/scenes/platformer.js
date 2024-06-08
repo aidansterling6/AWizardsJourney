@@ -5,7 +5,6 @@ class Platformer extends Phaser.Scene {
 
   init() {
     this.SCALE = 1.5;
-    //this.SCALE = 0.1;
     this.PARTICLE_VELOCITY = 50;
     this.width = config.width;
     this.height = config.height;
@@ -19,9 +18,6 @@ class Platformer extends Phaser.Scene {
       for(let i = 0; i < Level.Levels.length; i++){
         out += Level.Levels[i].gems.length;
       }
-      //for (let key in this.scores) {
-      //  out += this.scores[key];
-      //}
       return out;
     }
     this.btime = 0;
@@ -201,7 +197,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].grindSound = this.sound.add("rockGrind");
           this.rects[i].grindSound.loop = true;
           this.rects[i].grindSound.volume = 0;
-          //this.rects[i].grindSound.play();
         }
         if (this.rects[i].type === "mirror") {
           if(!this.rects[i].freeze){
@@ -233,9 +228,6 @@ class Platformer extends Phaser.Scene {
 
         if (this.rects[i].type === "button") {
           this.rects[i].sprite1 = this.add.sprite(1000, 1000, "button");
-          //let tex1 = this.textures.get("button").getSourceImage();
-          //this.rects[i].sprite1.scale = 1;
-          //console.log("TEST");
         }
         if (this.rects[i].type.substring(0, 4) === "pipe") {
           this.rects[i].grindSound = this.sound.add("rockGrind");
@@ -313,11 +305,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe3");
           let tex2 = this.textures.get("pipe3").getSourceImage();
           this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
-          //this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
-          //let tmp = 9;
-          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          //this.rects[i].spriteShiftx = -tmp / 2;
-          //this.rects[i].spriteShifty = -tmp / 2;
         }
         if (this.rects[i].type === "pipelub") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -327,11 +314,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe3");
           let tex2 = this.textures.get("pipe3").getSourceImage();
           this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
-          //let tex2 = this.textures.get("pipe3").getSourceImage();
-          //let tmp = 9;
-          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          //this.rects[i].spriteShiftx = -tmp / 2;
-          //this.rects[i].spriteShifty = -tmp / 2;
         }
         if (this.rects[i].type === "pipedrb") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -341,11 +323,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe6");
           let tex2 = this.textures.get("pipe6").getSourceImage();
           this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
-          //let tex2 = this.textures.get("pipe6").getSourceImage();
-          //let tmp = 9;
-          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          //this.rects[i].spriteShiftx = tmp / 2;
-          //this.rects[i].spriteShifty = tmp / 2;
         }
         if (this.rects[i].type === "pipedlm") {
           this.rects[i].sprite1 = this.add.sprite(this.rects[i].w, this.rects[i].h, "tileGrey");
@@ -355,10 +332,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].sprite2 = this.add.sprite(this.rects[i].w, this.rects[i].h, "pipe4");
           let tex2 = this.textures.get("pipe4").getSourceImage();
           this.rects[i].sprite2.scale = (32*1.2) / tex2.width;
-          //let tmp = 5;
-          //this.rects[i].sprite2.scale = ((32*1.2) - tmp) / tex2.height;
-          //this.rects[i].spriteShiftx = -tmp / 2;
-          //this.rects[i].spriteShifty = tmp / 2;
         }
       }
       for (let i = 0; i < this.rects.length; i++) {
@@ -367,7 +340,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].grindSound = this.sound.add("rockGrind");
           this.rects[i].grindSound.loop = true;
           this.rects[i].grindSound.volume = 1;
-          //this.rects[i].sprite = this.add.tileSprite(0, 0, this.rects[i].w, this.rects[i].h, "tileGrey2");
           if(this.rects[i].w === 32*2 && this.rects[i].h === 32*4){
             this.rects[i].sprite = this.add.sprite(this.rects[i].w, this.rects[i].h, "gate2by4");
           }
@@ -480,12 +452,6 @@ class Platformer extends Phaser.Scene {
 
 
     this.load.image("metal", "tiles/metalCenter.png");
-    // this.load.image("pipe1", "tiles/pipeGrey_25.png");
-    // this.load.image("pipe2", "tiles/pipeGrey_26.png");
-    // this.load.image("pipe3", "tiles/pipeGrey_36.png");
-    // this.load.image("pipe4", "tiles/pipeGrey_24.png");
-    // this.load.image("pipe5", "tiles/pipeGrey_35.png");
-    // this.load.image("pipe6", "tiles/pipeGrey_23.png");
 
     this.load.image("pipe1", "pipes/greyV.png");
     this.load.image("pipe2", "pipes/greyH.png");
@@ -565,8 +531,6 @@ class Platformer extends Phaser.Scene {
     //setup text objects
     this.win = this.add.text(0, 0, 'You Won!!!, press enter to restart the game', { fontFamily: 'Arial', fontSize: 24, color: '#ffffff' });
     this.scoreText = this.add.text(0, 0, 'Score: 0', { fontFamily: 'Arial', fontSize: 15, color: '#ffffff' });
-    //this.helpTxt = this.add.text(0, 0, 'You Won!!!, press enter to restart the game', { fontFamily: 'Arial', fontSize: 15, color: '#ffffff' });
-    //this.helpTxt.visible = true;
 
 
     //setup keyboard controls
@@ -676,7 +640,6 @@ class Platformer extends Phaser.Scene {
           if (o !== this.lazer[i].nb) {
             if (dist(xy.x, xy.y, this.lazer[i].x, this.lazer[i].y) === snum) {
               this.fill(0, 0, 0);
-              //ellipse(xy.x - this.GlobalXOffset,xy.y - this.GlobalYOffset,5,5);
               if (xy.t) {
                 x = xy.x;
                 y = xy.y;
@@ -688,16 +651,12 @@ class Platformer extends Phaser.Scene {
                   this.mirror[o].b = true;
                 }
 
-                //this.rect(x - (cos(this.lazer[i].a)*20) - this.GlobalXOffset,y - (sin(this.lazer[i].a)*20) - this.GlobalYOffset,5,5);
-                //this.line(x - (cos(this.lazer[i].a)*20),y - (sin(this.lazer[i].a)*20),x - (cos(this.lazer[i].a)*20) - (sin(this.mirror[o].a)*20),y - (sin(this.lazer[i].a)*20) + (cos(this.mirror[o].a)*20));
-                //ellipse(xy2.x,xy2.y,5,5);
                 var x3 = x - (cos(this.mirror[o].a) * dist(x, y, xy2.x, xy2.y));
                 var y3 = y - (sin(this.mirror[o].a) * dist(x, y, xy2.x, xy2.y));
                 if (Math.round(x3) === Math.round(xy2.x) && Math.round(y3) === Math.round(xy2.y)) {
                   x3 = x - (cos(this.mirror[o].a) * -dist(x, y, xy2.x, xy2.y));
                   y3 = y - (sin(this.mirror[o].a) * -dist(x, y, xy2.x, xy2.y));
                 }
-                //ellipse(x3,y3,5,5);
                 var x4 = x3 + (sin(this.mirror[o].a) * dist(x - (cos(this.lazer[i].a) * 20), y - (sin(this.lazer[i].a) * 20), xy2.x, xy2.y));
                 var y4 = y3 - (cos(this.mirror[o].a) * dist(x - (cos(this.lazer[i].a) * 20), y - (sin(this.lazer[i].a) * 20), xy2.x, xy2.y));
 
@@ -705,23 +664,16 @@ class Platformer extends Phaser.Scene {
                   x4 = x3 + (sin(this.mirror[o].a) * -dist(x - (cos(this.lazer[i].a) * 20), y - (sin(this.lazer[i].a) * 20), xy2.x, xy2.y));
                   y4 = y3 - (cos(this.mirror[o].a) * -dist(x - (cos(this.lazer[i].a) * 20), y - (sin(this.lazer[i].a) * 20), xy2.x, xy2.y));
                 }
-                //ellipse(x4,y4,5,5);
-                //ellipse(x - (cos(this.mirror[o].a)*dist(x,y,xy2.x,xy2.y)) + (sin(this.mirror[o].a)*dist(x,y,xy2.x,xy2.y)),y - (sin(this.mirror[o].a)*dist(x,y,xy2.x,xy2.y)) - (cos(this.mirror[o].a)*dist(x,y,xy2.x,xy2.y)),5,5);
                 ////important
                 var a = angLine(x, y, x4, y4);
                 this.stroke(255, 0, 255);
-                //this.line(x,y,x + cos(a)*20,y + sin(a)*20);
-                //this.line(x,y,x4,y4);
                 if (this.mirror[o].r === true) {
                   if (this.lazer[i].t === false) {
                     this.lazer.push({ x: x, y: y, a: a, t: false, nb: o, gr: this.lazer[i].gr, c: -1, bounces: this.lazer[i].bounces - 1});
-                    //ellipse(x - this.GlobalXOffset,y - this.GlobalYOffset,5,5);
                     this.lazer[i].t = true;
                   }
                 } else {
                   this.lazer.push({ x: x, y: y, a: a, t: false, nb: o, gr: this.lazer[i].gr, c: -1, bounces: 0});
-                  //this.lazer.push({ x: x, y: y, a: a, t: true, nb: o, gr: this.lazer[i].gr, c: -1 });
-                  //this.rect(x - this.GlobalXOffset - 2.5, y - this.GlobalYOffset - 2.5, 5, 5);
                 }
               }
             }
@@ -879,7 +831,6 @@ class Platformer extends Phaser.Scene {
           if (Math.abs(this.rects[i].lx - this.rects[i].x) > 0.1) {
             if (this.DKey.isDown) {
               this.player.resetFlip();
-              // this.player.setFlip(true, false);
               if(this.rects[i].HitDown){
                 this.player.anims.play('walk', true);
               }
@@ -898,7 +849,6 @@ class Platformer extends Phaser.Scene {
             }
             if (this.AKey.isDown) {
               this.player.setFlip(true, false);
-              // this.player.resetFlip();
               if(this.rects[i].HitDown){
                 this.player.anims.play('walk', true);
               }
@@ -982,16 +932,12 @@ class Platformer extends Phaser.Scene {
           }
           //draw and change shape when pressed
           if (this.rects[i].HitDown === true) {
-            this.fill(200, 0, 0);
-            //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
             if (this.rects[i].sprite1) {
               this.rects[i].sprite1.x = this.rects[i].x - this.GlobalXOffset;
               this.rects[i].sprite1.y = this.rects[i].y - this.GlobalYOffset;
             }
           }
           else {
-            this.fill(200, 0, 0);
-            //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - (this.rects[i].h + 10) / 2 - this.GlobalYOffset, this.rects[i].w, (this.rects[i].h + 10)/2);
             if (this.rects[i].sprite1) {
               this.rects[i].sprite1.x = this.rects[i].x - this.GlobalXOffset;
               this.rects[i].sprite1.y = this.rects[i].y - this.GlobalYOffset - this.rects[i].h - 0.5;
@@ -1198,15 +1144,6 @@ class Platformer extends Phaser.Scene {
             this.rects[i].HitUp = false;
             this.rects[i].HitLeft = false;
             this.rects[i].HitRight = false;
-            //dont allow link when draged
-            // if (this.dragIndex === i) {
-            //   this.rects[i].type = this.rects[i].type.substring(0, 6) + "u";
-            //   this.rects[i].n1 = -1;
-            // }
-            // //dont link if the other pipe is not linked to a base pipe in any way
-            // if (this.rects[i].n1 !== -1 && this.rects[this.rects[i].n1].type.substring(6, 7) !== "b") {
-            //   this.rects[i].type = this.rects[i].type.substring(0, 6) + "u";
-            // }
             if (this.dragIndex === i) {
               this.rects[i].type = this.rects[i].type.substring(0, 6) + "u";
               this.rects[i].n1 = -1;
@@ -1215,49 +1152,6 @@ class Platformer extends Phaser.Scene {
             if (this.rects[i].n1 !== -1 && this.rects[this.rects[i].n1].type.substring(6, 7) !== "b") {
               this.rects[i].type = this.rects[i].type.substring(0, 6) + "u";
             }
-            //move when linked
-            // for (var o = 0; o < this.rects.length; o++) {
-            //   if (i !== o && this.dragIndex !== i && this.rects[o].type.substring(6, 7) === "b" && (this.rects[i].n1 === o || this.rects[i].n1 === -1)) {
-            //     if ((this.rects[o].type.substring(4, 5) === "u" || this.rects[o].type.substring(5, 6) === "u") && (link1 === "d" || link2 === "d") && dist(this.rects[i].x, this.rects[i].y + (this.rects[i].h / 2), this.rects[o].x, this.rects[o].y - (this.rects[i].h / 2)) < 4) {
-
-            //       this.rects[i].n1 = o;
-            //       this.rects[i].ay = (this.rects[o].y - this.rects[i].y) / 10;
-            //       this.rects[i].ax = (this.rects[o].x - this.rects[i].x) / 10;
-            //       this.rects[i].HitDown = true;
-            //       this.rects[o].HitDown = true;
-            //       this.rects[i].type = this.rects[i].type.substring(0, 6) + "b";
-            //     }
-            //     if ((this.rects[o].type.substring(4, 5) === "d" || this.rects[o].type.substring(5, 6) === "d") && (link1 === "u" || link2 === "u") && dist(this.rects[i].x, this.rects[i].y - (this.rects[i].h / 2), this.rects[o].x, this.rects[o].y + (this.rects[i].h / 2)) < 4) {
-
-            //       this.rects[i].n1 = o;
-            //       this.rects[i].ay = (this.rects[o].y - this.rects[i].y) / 10;
-            //       this.rects[i].ax = (this.rects[o].x - this.rects[i].x) / 10;
-            //       this.rects[i].HitDown = true;
-            //       this.rects[o].HitDown = true;
-            //       this.rects[i].type = this.rects[i].type.substring(0, 6) + "b";
-            //     }
-            //     if ((this.rects[o].type.substring(4, 5) === "l" || this.rects[o].type.substring(5, 6) === "l") && (link1 === "r" || link2 === "r") && dist(this.rects[i].x + (this.rects[i].w / 2), this.rects[i].y, this.rects[o].x - (this.rects[o].w / 2), this.rects[o].y) < 4) {
-
-
-            //       this.rects[i].n1 = o;
-            //       this.rects[i].ay = (this.rects[o].y - this.rects[i].y) / 10;
-            //       this.rects[i].ax = (this.rects[o].x - this.rects[i].x) / 10;
-            //       this.rects[i].HitDown = true;
-            //       this.rects[o].HitDown = true;
-            //       this.rects[i].type = this.rects[i].type.substring(0, 6) + "b";
-            //     }
-            //     if ((this.rects[o].type.substring(4, 5) === "r" || this.rects[o].type.substring(5, 6) === "r") && (link1 === "l" || link2 === "l") && dist(this.rects[i].x - (this.rects[i].w / 2), this.rects[i].y, this.rects[o].x + (this.rects[o].w / 2), this.rects[o].y) < 4) {
-
-            //       //console.log("text");
-            //       this.rects[i].n1 = o;
-            //       this.rects[i].ay = (this.rects[o].y - this.rects[i].y) / 10;
-            //       this.rects[i].ax = (this.rects[o].x - this.rects[i].x) / 10;
-            //       this.rects[i].HitDown = true;
-            //       this.rects[o].HitDown = true;
-            //       this.rects[i].type = this.rects[i].type.substring(0, 6) + "b";
-            //     }
-            //   }
-            // }
             for (var o = 0; o < this.rects.length; o++) {
               if (i !== o && this.dragIndex !== i && this.rects[o].type.substring(6, 7) === "b" && (this.rects[i].n1 === o || this.rects[i].n1 === -1)) {
                 if ((this.rects[o].type.substring(4, 5) === "u" || this.rects[o].type.substring(5, 6) === "u") && (link1 === "d" || link2 === "d") && dist(this.rects[i].x, this.rects[i].y + (this.rects[i].h / 2), this.rects[o].x, this.rects[o].y - (this.rects[i].h / 2)) < 10) {
@@ -1290,7 +1184,6 @@ class Platformer extends Phaser.Scene {
                 }
                 if ((this.rects[o].type.substring(4, 5) === "r" || this.rects[o].type.substring(5, 6) === "r") && (link1 === "l" || link2 === "l") && dist(this.rects[i].x - (this.rects[i].w / 2), this.rects[i].y, this.rects[o].x + (this.rects[i].w / 2), this.rects[o].y) < 10) {
 
-                  ////console.log("text");
                   this.rects[i].n1 = o;
                   this.rects[i].ay = (this.rects[o].y - this.rects[i].y) / 10;
                   this.rects[i].ax = (this.rects[o].x - this.rects[i].x) / 10;
@@ -1300,38 +1193,6 @@ class Platformer extends Phaser.Scene {
                 }
               }
             }
-            // for (var o = 0; o < this.rects.length; o++) {
-
-            //   if (i !== o && this.rects[i].y < this.rects[o].y && this.rects[i].y + this.rects[i].ay > this.rects[o].y - (this.rects[o].h / 2) - (this.rects[i].h / 2) && this.rects[i].x + (this.rects[i].w / 2) - 1 > this.rects[o].x - (this.rects[o].w / 2) && this.rects[i].x - (this.rects[i].w / 2) + 1 < this.rects[o].x + (this.rects[o].w / 2)) {
-            //     this.rects[i].ay = this.rects[i].ay * -0;
-            //     this.rects[i].y = this.rects[o].y - (this.rects[o].h / 2) - (this.rects[i].h / 2);
-            //     this.rects[i].HitDown = true;
-            //   }
-            //   if (i !== o && this.rects[i].y > this.rects[o].y && this.rects[i].y + this.rects[i].ay < this.rects[o].y + (this.rects[o].h / 2) + (this.rects[i].h / 2) && this.rects[i].x + (this.rects[i].w / 2) - 1 > this.rects[o].x - (this.rects[o].w / 2) && this.rects[i].x - (this.rects[i].w / 2) + 1 < this.rects[o].x + (this.rects[o].w / 2)) {
-            //     this.rects[i].ay = this.rects[i].ay * -0.0;
-            //     this.rects[i].y = this.rects[o].y + (this.rects[o].h / 2) + (this.rects[i].h / 2);
-            //     if (this.rects[o].type === "player") {
-            //       this.dragIndex = -1;
-            //     }
-            //   }
-            //   if (i !== o && this.rects[i].x < this.rects[o].x && this.rects[i].x + this.rects[i].ax > this.rects[o].x - (this.rects[o].w / 2) - (this.rects[i].w / 2) && this.rects[i].y + (this.rects[i].h / 2) - 1 > this.rects[o].y - (this.rects[o].h / 2) && this.rects[i].y - (this.rects[i].h / 2) + 1 < this.rects[o].y + (this.rects[o].h / 2)) {
-            //     this.rects[i].ax = this.rects[i].ax * -0;
-            //     this.rects[i].x = this.rects[o].x - (this.rects[o].w / 2) - (this.rects[i].w / 2);
-            //   }
-
-            //   if (i !== o && this.rects[i].x > this.rects[o].x && this.rects[i].x + this.rects[i].ax < this.rects[o].x + (this.rects[o].w / 2) + (this.rects[i].w / 2) && this.rects[i].y + (this.rects[i].h / 2) - 1 > this.rects[o].y - (this.rects[o].h / 2) && this.rects[i].y - (this.rects[i].h / 2) + 1 < this.rects[o].y + (this.rects[o].h / 2)) {
-            //     this.rects[i].ax = this.rects[i].ax * -0;
-            //     this.rects[i].x = this.rects[o].x + (this.rects[o].w / 2) + (this.rects[i].w / 2);
-            //   }
-            //   if (this.rects[o].type.substring(0, 4) !== "pipe") {
-            //     if (i !== o && Math.abs((this.rects[i].x - (this.rects[i].w / 2)) - (this.rects[o].x + (this.rects[o].w / 2))) < 0.001 && this.rects[i].y + (this.rects[i].h / 2) - 1 > this.rects[o].y - (this.rects[o].h / 2) && this.rects[i].y - (this.rects[i].h / 2) + 1 < this.rects[o].y + (this.rects[o].h / 2) && (this.rects[o].type === "player" || this.rects[o].type === "box" || this.rects[o].type.substring(0, 4) === "pipe")) {
-            //       this.rects[i].ax = 1;
-            //     }
-            //     if (i !== o && Math.abs((this.rects[i].x + (this.rects[i].w / 2)) - (this.rects[o].x - (this.rects[o].w / 2))) < 0.001 && this.rects[i].y + (this.rects[i].h / 2) - 1 > this.rects[o].y - (this.rects[o].h / 2) && this.rects[i].y - (this.rects[i].h / 2) + 1 < this.rects[o].y + (this.rects[o].h / 2) && (this.rects[o].type === "player" || this.rects[o].type === "box" || this.rects[o].type.substring(0, 4) === "pipe")) {
-            //       this.rects[i].ax = -1;
-            //     }
-            //   }
-            // }
             //collision logic
             for (var o = 0; o < this.rects.length; o++) {
 
@@ -1584,7 +1445,6 @@ class Platformer extends Phaser.Scene {
           if (this.rects[i].HitDown) {
             this.rects[i].ax = 0;
           }
-          ////console.log(StartDrag.hit + ", " + EndDrag.hit);
           let EndDrag = {hit: this.rects[i].HitDown, x: this.rects[i].x, y: this.rects[i].y};
           let bGrind = ((this.rects[i].HitDown || this.rects[i].HitUp || this.rects[i].HitLeft || this.rects[i].HitRight) && (StartDrag.x !== EndDrag.x || StartDrag.y !== EndDrag.y));
           if(!this.rects[i].GrindTime){
@@ -1596,9 +1456,6 @@ class Platformer extends Phaser.Scene {
           this.rects[i].GrindTime--;
           if(bGrind){
             this.rects[i].GrindTime = 5;
-          }
-          if(this.rects[i].grindAmount !== 0){
-          //console.log(this.rects[i].grindAmount/2);
           }
           if(this.rects[i].grindSound){
             if(!this.rects[i].grindSound.isPlaying && this.rects[i].GrindTime > 0){
@@ -1662,7 +1519,7 @@ class Platformer extends Phaser.Scene {
           if (this.mouseIsPressed && this.rects[i].HitDown && this.dragIndex === -1 && this.mouseX > this.rects[i].x - this.GlobalXOffset - (this.rects[i].w / 2) && this.mouseX < this.rects[i].x - this.GlobalXOffset + (this.rects[i].w / 2) && this.mouseY > this.rects[i].y - this.GlobalYOffset - (this.rects[i].h / 2) && this.mouseY < this.rects[i].y - this.GlobalYOffset + (this.rects[i].h / 2)) {
             this.dragIndex = i;
           }
-          //if not this.dragIndexng, dont drag
+          //if not this.dragIndexng, don't drag
           if (this.mouseIsPressed === false) {
             this.dragIndex = -1;
           }
@@ -1706,12 +1563,6 @@ class Platformer extends Phaser.Scene {
           if (this.rects[i].HitDown) {
             this.rects[i].ax = 0;
           }
-          //draw
-          //this.noStroke();
-          //this.fill(87, 87, 87);
-
-          //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
-
         }
       }
       for (var i = 0; i < this.rects.length; i++) {
@@ -1734,7 +1585,7 @@ class Platformer extends Phaser.Scene {
           if (this.rects[i].y > 700) {
             this.dead = true;
           }
-          //if a key is pressed, dont drag
+          //if a key is pressed, don't drag
           if (this.WKey.isDown || this.AKey.isDown || this.DKey.isDown) {
             this.dragIndex = -1;
           }
@@ -1818,9 +1669,6 @@ class Platformer extends Phaser.Scene {
           if(bGrind){
             this.rects[i].GrindTime = 5;
           }
-          if(this.rects[i].grindAmount !== 0){
-          //console.log(this.rects[i].grindAmount/2);
-          }
           if(this.rects[i].grindSound){
             if(!this.rects[i].grindSound.isPlaying && this.rects[i].GrindTime > 0){
               this.rects[i].grindSound.play();
@@ -1835,12 +1683,6 @@ class Platformer extends Phaser.Scene {
               this.rects[i].grindSound.stop();
             }
           }
-          //draw
-          //this.noStroke();
-          //this.fill(0, 0, 255);
-
-          //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
-
         }
       }
       for (var i = 0; i < this.rects.length; i++) {
@@ -1869,7 +1711,6 @@ class Platformer extends Phaser.Scene {
               this.rects[i].triggered = true;
             }
           }
-          //this.fill(0, 0, 0);
           //move gates
           if (out === true) {
             if (this.rects[this.rects[i].n1].type === "gated") {
@@ -1899,11 +1740,6 @@ class Platformer extends Phaser.Scene {
               this.rects[this.rects[i].n1].ax = -1;
             }
           }
-          //draw
-          //this.noStroke();
-          //this.fill(0, 60, 82);
-          //this.rect(this.rects[i].x - this.rects[i].w / 2 - this.GlobalXOffset, this.rects[i].y - this.rects[i].h / 2 - this.GlobalYOffset, this.rects[i].w, this.rects[i].h);
-
         }
       }
       this.noStroke();
@@ -1972,15 +1808,6 @@ class Platformer extends Phaser.Scene {
           if (this.rects[i].sprite) {
             this.rects[i].sprite.x = this.rects[i].x - this.GlobalXOffset;
             this.rects[i].sprite.y = this.rects[i].y - this.GlobalYOffset;
-          }
-          //if hovered over, draw a line to conections
-          if (this.mouseX > this.rects[i].x - this.GlobalXOffset - (this.rects[i].w / 2) && this.mouseX < this.rects[i].x - this.GlobalXOffset + (this.rects[i].w / 2) && this.mouseY > this.rects[i].y - this.GlobalYOffset - (this.rects[i].h / 2) && this.mouseY < this.rects[i].y - this.GlobalYOffset + (this.rects[i].h / 2)) {
-            for (var o = 0; o < this.rects.length; o++) {
-              if ((this.rects[o].type === "button" || this.rects[o].type === "sense") && this.rects[o].n1 === i) {
-                this.stroke(255, 0, 0);
-                //this.line(this.rects[o].x - this.GlobalXOffset, this.rects[o].y - this.GlobalYOffset, this.rects[i].x - this.GlobalXOffset, this.rects[i].y - this.GlobalYOffset);
-              }
-            }
           }
         }
         if (this.rects[i].type === "gateu") {
@@ -2172,8 +1999,6 @@ class Platformer extends Phaser.Scene {
 
     //move score with player
     this.scoreText.text = "Score: " + this.score;
-    // this.scoreText.x = this.player.x + 200;
-    // this.scoreText.y = this.player.y - 270;
     this.scoreText.x = this.player.x + 250;
     this.scoreText.y = this.player.y - 325;
     this.scoreText.setOrigin(0.5, 0.5);
@@ -2186,12 +2011,8 @@ class Platformer extends Phaser.Scene {
     let ratio = this.width / this.height;
     this.paralax.tileScaleX = tmpScale / ratio;
     this.paralax.tileScaleY = tmpScale;
-    // this.paralax.tilePositionX = this.player.x*this.SCALE;
-    // this.paralax.tilePositionY = this.player.y*this.SCALE;
     this.paralax.tilePositionX = 0;
     this.paralax.tilePositionY = 0;
-    // this.paralax.displayWidth = this.width;
-    // this.paralax.displayHeight = this.height;
     this.paralax.displayWidth = 3000;
     this.paralax.displayHeight = 3000;
     this.paralax.x = 160;
@@ -2199,7 +2020,6 @@ class Platformer extends Phaser.Scene {
     this.paralax.depth = -100000;
 
 
-    //this.paralax.visible = false;
 
     //load level for first time
     if (this.start) {
@@ -2209,7 +2029,6 @@ class Platformer extends Phaser.Scene {
 
     //clear simple shapes
     this.graphics.clear();
-    //this.background(0, 0, 0, 100);
 
     //logic for antimagic fields
     this.noMagicZone(true);
@@ -2240,7 +2059,6 @@ class Platformer extends Phaser.Scene {
 
     //handle checkpoints
     for (var i = 0; i < this.checkPoint.length; i++) {
-      //{x:200, y:200, top:0, bottom:200}
       for (var o = 0; o < this.rects.length; o++) {
         if (this.rects[o].type === "player" && this.rects[o].x > this.checkPoint[i].x - 5 && this.rects[o].x < this.checkPoint[i].x + 5 && this.rects[o].y + this.rects[o].h/2 > this.checkPoint[i].bottom && this.rects[o].y - this.rects[o].h/2 < this.checkPoint[i].top) {
           this.respawnX = this.checkPoint[i].x;
@@ -2249,7 +2067,6 @@ class Platformer extends Phaser.Scene {
             this.checkpoint.play();
           }
           this.checkpointSoundTime = 5;
-          //console.log("checkPoint: " + this.respawnX + ", " + this.respawnY);
           if (i === this.checkPoint.length - 1) {
             this.CurrentLevel++;
             this.loadLevel(this.CurrentLevel, true);
@@ -2264,64 +2081,21 @@ class Platformer extends Phaser.Scene {
       if(this.checkPoint[i] && !this.checkPoint[i].end){
       this.stroke(0, 180, 0, 100);
       this.strokeWeight(10);
-      //this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
       this.line(this.checkPoint[i].x - this.GlobalXOffset, this.checkPoint[i].top, this.checkPoint[i].x - this.GlobalXOffset, this.checkPoint[i].bottom);
       this.strokeWeight(1);
       }
-      // for (var o = 0; o < this.rects.length; o++) {
-      //   if (this.rects[o].type === "player" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
-      //     this.respawnX = this.checkPoint[i];
-      //     this.respawnY = this.rects[o].y;
-      //     if (i === this.checkPoint.length - 1) {
-      //       this.CurrentLevel++;
-      //       this.loadLevel(this.CurrentLevel, true);
-      //     }
-      //   }
-      //   if (this.rects[o].type !== "player" && this.rects[o].type !== "gated" && this.rects[o].type !== "platform" && this.rects[o].x > this.checkPoint[i] - 5 && this.rects[o].x < this.checkPoint[i] + 5) {
-      //     this.dead = true;
-      //   }
-      // }
-      // this.stroke(255, 0, 0, 150);
-      // this.strokeWeight(10);
-      // this.player.x - this.width / 2, this.player.y - this.height / 2, this.width, this.height
-      // this.line(this.checkPoint[i] - this.GlobalXOffset, this.player.y - this.height / 2, this.checkPoint[i] - this.GlobalXOffset, this.player.y + this.height / 2);
-      // this.strokeWeight(1);
     }
-    //handle resetting level
-    // if (this.dead || this.RKey.isDown) {
-    //   this.dragIndex = -1;
-    //   this.dead = false;
-    //   this.loadLevel(this.CurrentLevel, false);
-    // }
-    //handle help text
-    if (this.HKey.isDown && this.btime <= 0) {
-      this.btime = 10;
-      // if (this.helpTxt.visible) {
-      //   this.helpTxt.visible = false;
-      // } else {
-      //  // this.helpTxt.visible = true;
-      // }
-    }
-    //this.helpTxt.visible = false;
     if(this.mouseIsPressed){
-      //console.log("mouse: " + this.mouseX + ", " + this.mouseY);
-      //console.log("{x:" + Math.round(this.mouseX*100)/100 + ", y:" + Math.round(this.mouseY*100)/100 + ", w:10, h:10},");
-      console.log("\n\nrespawnX: " + this.rects[0].x + ",respawnY: " +  + this.rects[0].y + ",\n\n");
+      //console.log("\n\nrespawnX: " + this.rects[0].x + ",respawnY: " +  + this.rects[0].y + ",\n\n");
     }
     //handle menus
     this.btime--;
-    // this.helpTxt.x = this.player.x;
-    // this.helpTxt.y = this.player.y + 50;
-    // this.helpTxt.setOrigin(0.5, 0.5);
-    // this.helpTxt.depth = 1000;
-    // this.helpTxt.text = "      WASD to move. Click and drag on boxes to move them.\nPress R to reset to last checkpoint. Press H to toggle this menu.";
     this.win.visible = false;
     if (this.CurrentLevel > 3) {
       if(this.OnWin){
         this.tada.play();
         this.OnWin = false;
       }
-      //this.helpTxt.visible = false;
       this.background(0, 0, 0);
       this.win.x = this.player.x;
       this.win.y = this.player.y - 150;

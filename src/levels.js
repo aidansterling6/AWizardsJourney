@@ -18,6 +18,7 @@ class Level{
         this.rects = rects;
         this.mirror = mirror;
     }
+    //level data storage
     static Levels = 
         [
             {

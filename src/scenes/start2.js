@@ -13,7 +13,7 @@ class Start2 extends Phaser.Scene {
     create() {
         let my = this.my;
         let { width, height } = this.sys.game.canvas;
-    
+        //create initial start screen to get mouse click for audio
         this.text = this.add.text(width/2, height/2, 'Click to start', { fontFamily: 'Arial', fontSize: 30, color: '#ffffff' });
         this.text.setOrigin(0.5, 0.5);
         this.mouseDown = this.input.on('pointerdown', (pointer) => {
