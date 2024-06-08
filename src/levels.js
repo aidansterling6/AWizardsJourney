@@ -631,7 +631,7 @@ class Level{
 
 
 
-                    {level: 3, x:-32*17,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:90,n2:0,mi:false, freeze: true},
+                    {level: 3, x:-32*15,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:90,n2:0,mi:false, freeze: true},
                     
                     {level: 3, x:-32*13,y:32*20,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
                     {level: 3, x:-32*14.2,y:32*20,w:27,h:27,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*27*27)*0.5},
