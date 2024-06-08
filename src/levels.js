@@ -514,6 +514,8 @@ class Level{
             {
                 respawnX: -975,
                 respawnY: -180,
+                respawnX: 133.90414214640535,
+                respawnY: -173.5,
                 noMagic: [
                 ],
                 checkPoint: [
@@ -534,12 +536,14 @@ class Level{
                     {level: 3, x:-32*7,y:32*18.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//6
                     {level: 3, x:32*8,y:32*18.5,w:32*2,h:32*4,ax:0,ay:0,HitDown:false,type:"gated",n1:-1,n2:0,mi:false},//7
 
-                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:2,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},//8
-                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:3,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},//9
-                    {level: 3, x:32*2.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:4,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},//10
-                    {level: 3, x:-32*11,y:32*4,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"sense",n1:5,n2:0,mi:false, l: Math.sqrt(2*32*2*32*2)*0.5},//11
-                    {level: 3, x:-32*10.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:6,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},//12
-                    {level: 3, x:32*4.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:7,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},//13
+
+                    {level: 3, x:-32*21.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:1,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//8
+                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:2,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//9
+                    {level: 3, x:-32*14.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:3,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//10
+                    {level: 3, x:32*2.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:4,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//11
+                    {level: 3, x:-32*11,y:32*4,w:32*2,h:32*2,ax:0,ay:0,HitDown:false,type:"sense",n1:5,n2:0,mi:false, l: Math.sqrt(2*32*2*32*2)*0.5, triggered: false},//12
+                    {level: 3, x:-32*10.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:6,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//13
+                    {level: 3, x:32*4.5,y:32*14.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:7,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5, triggered: false},//14
 
                     {level: -3, x:-32*24.5,y:-32*4,w:32*19,h:32*2,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
                     {level: -3, x:-32*33,y:-32*9,w:32*2,h:32*10,ax:0,ay:0,HitDown:false,type:"platform",n1:-1,n2:0,mi:false},
@@ -581,7 +585,6 @@ class Level{
 
                     {level: 3, x:-32*31.5,y:-32*5.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:0,n2:0,mi:false, freeze: true},
                     {level: 3, x:-32*25,y:-32*5.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"mirror",n1:135,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
-                    {level: 3, x:-32*21.5,y:-32*11.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"sense",n1:1,n2:0,mi:false, l: Math.sqrt(2*32*1.2*32*1.2)*0.5},
 
 
                     {level: 3, x:-32*14.5,y:-32*1.5,w:32*1.2,h:32*1.2,ax:0,ay:0,HitDown:false,type:"lazer",n1:0,n2:0,mi:false, freeze: true},
@@ -630,7 +633,108 @@ class Level{
                 ],
                 cables: [
 
-                    {x:-32*14.5,y:-32*11.5 - 13/2 - 13*0 - 10*0, type:"cablev", index: 8},
+
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*0 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*1 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*2 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*3 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*4 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*5 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*6 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*7 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*8 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*9 - 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*0 + 10*0,y:-32*11.5 + 13*9 + 10*1, type:"cableNode", index: 11},
+                    {x:32*2.5 + 13*0 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*1 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*2 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*3 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*4 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*5 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*6 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*7 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 11},
+                    {x:32*2.5 + 13*7 + 10*2,y:-32*11.5 + 13*9 + 10*1, type:"cableNode", index: 11},
+                    {x:32*2.5 + 13*7 + 10*2,y:-32*11.5 + 13*9 + 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*7 + 10*2,y:-32*11.5 + 13*8 + 10*0, type:"cablev", index: 11},
+                    {x:32*2.5 + 13*7 + 10*2,y:-32*11.5 + 13*7 + 10*0, type:"cablev", index: 11},
+
+
+
+
+
+
+                    {x:-32*14.5 + 13*0 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*1 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*2 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*3 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*4 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*5 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*6 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*7 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*8 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*9 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*10 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*11 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*12 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*0,y:-32*11.5 - 13*0 - 10*0, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*0 - 10*0, type:"cableNode", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*0 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*1 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*2 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*3 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*4 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*5 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*6 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*7 - 10*1, type:"cablev", index: 9},
+                    {x:-32*14.5 + 13*14 + 10*1,y:-32*11.5 - 13*7 - 10*2, type:"cableNode", index: 9},
+                    {x:-32*14.5 + 13*14 - 13*0 + 10*0,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 - 13*1 + 10*0,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 - 13*2 + 10*0,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 - 13*3 + 10*0,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*14 - 13*4 + 10*0,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*1 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*2 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*3 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*4 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*5 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*6 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*7 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*8 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*9 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*10 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*11 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*12 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*13 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+                    {x:-32*14.5 + 13*13 + 13*14 + 10*2,y:-32*11.5 - 13*7 - 10*2, type:"cableh", index: 9},
+
+
+
+
+
+
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*0 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*1 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*2 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*3 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*4 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*5 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*6 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*7 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*8 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*9 - 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*0,y:-32*11.5 + 13*9 + 10*1, type:"cableNode", index: 8},
+                    {x:-32*21.5 + 13*0 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*1 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*2 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*3 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*4 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*5 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*6 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*7 + 10*1,y:-32*11.5 + 13*9 + 10*1, type:"cableh", index: 8},
+                    {x:-32*21.5 + 13*7 + 10*2,y:-32*11.5 + 13*9 + 10*1, type:"cableNode", index: 8},
+                    {x:-32*21.5 + 13*7 + 10*2,y:-32*11.5 + 13*9 + 10*0, type:"cablev", index: 8},
+                    {x:-32*21.5 + 13*7 + 10*2,y:-32*11.5 + 13*8 + 10*0, type:"cablev", index: 8},
 
 
 

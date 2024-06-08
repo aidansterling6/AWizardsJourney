@@ -886,7 +886,7 @@ class Platformer extends Phaser.Scene {
       }
       for(let i = 0; i < this.cables.length; i++){
         let o = this.cables[i].index;
-        if(this.rects[o] && this.rects[o].HitDown){
+        if(this.rects[o] && ((this.rects[o].type === "button" && this.rects[o].HitDown) || (this.rects[o].type === "sense" && this.rects[o].triggered))){
           this.cables[i].spriteOn.visible = true;
           this.cables[i].spriteOff.visible = false;
         }
@@ -1621,10 +1621,12 @@ class Platformer extends Phaser.Scene {
 
           var out = false;
           var num = 0;
+          this.rects[i].triggered = false;
           //test for laser
           for (var o = 0; o < this.lazer.length; o++) {
             if (this.lazer[o].x > this.rects[i].x - (this.rects[i].w / 2) && this.lazer[o].x < this.rects[i].x + (this.rects[i].w / 2) && this.lazer[o].y > this.rects[i].y - (this.rects[i].h / 2) && this.lazer[o].y < this.rects[i].y + (this.rects[i].h / 2)) {
               out = true;
+              this.rects[i].triggered = true;
             }
           }
           this.fill(0, 0, 0);
