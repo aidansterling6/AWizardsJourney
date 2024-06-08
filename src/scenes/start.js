@@ -36,6 +36,7 @@ class Start extends Phaser.Scene {
             level art pack: Cainos on unity store
             pipe art: TwistedDonkey on OpenGameArt.org
             Character: Penzilla Design on itch.io
+            Music: Egge Audio on itch.io
             click to go back
             `, 
             { fontFamily: 'Arial', fontSize: 30, color: '#ffffff' });
