@@ -2025,6 +2025,7 @@ class Platformer extends Phaser.Scene {
     if(this.mouseIsPressed){
       console.log("mouse: " + this.mouseX + ", " + this.mouseY);
       console.log("{x:" + Math.round(this.mouseX*100)/100 + ", y:" + Math.round(this.mouseY*100)/100 + ", w:10, h:10},");
+      console.log("\n\nrespawnX: " + this.rects[0].x + ",\nrespawnY: " +  + this.rects[0].y + ",\n\n");
     }
     //handle menus
     this.btime--;
